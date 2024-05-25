@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+// reset
+@import './styles/reset';
+
+// global
+@import './styles/variable';
+
+// variable
+@import './styles/variable';
