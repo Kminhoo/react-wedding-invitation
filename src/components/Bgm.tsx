@@ -5,7 +5,7 @@ const Bgm = () => {
 
   const ref = useRef<HTMLAudioElement>(null)
 
-  const playbgm = () => {
+  const playBgm = () => {
     setPlayMusic(true)
     ref.current?.play()
   }
@@ -29,7 +29,7 @@ const Bgm = () => {
   }, [])
 
   return (
-    <div className="bgm" onClick={playMusic ? stopBgm : playbgm}>
+    <div className="bgm" onClick={playMusic ? stopBgm : playBgm}>
       <audio
         ref={ref}
         loop={true}

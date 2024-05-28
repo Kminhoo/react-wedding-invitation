@@ -4,13 +4,18 @@ import { doc, getDoc } from 'firebase/firestore'
 import { db } from 'firebaseApp'
 
 import Bgm from 'components/Bgm'
+import StateMessage from 'components/common/StateMessage'
+import Header from 'components/Header'
+import Main from 'components/Main'
+
+import { Wedding } from 'models/wedding'
 
 const App = () => {
   const [loading, setLoading] = useState<Boolean>(false)
 
   const [error, setError] = useState()
 
-  const [wedding, setWedding] = useState<any>()
+  const [wedding, setWedding] = useState<Wedding | null>()
 
   const getWeddingData = async () => {
     try {
@@ -19,7 +24,7 @@ const App = () => {
       const docRef = doc(db, 'wedding', 'v3eNky8xXowBjARen4i5')
       const docSnap = await getDoc(docRef)
 
-      setWedding(docSnap.data())
+      setWedding(docSnap.data() as Wedding)
       setLoading(false)
     } catch (error: any) {
       setError(error)
@@ -31,18 +36,27 @@ const App = () => {
   }, [])
 
   if (loading) {
-    return <div>로딩중</div>
+    return <StateMessage type="loading" />
   }
 
   if (error) {
-    return <div>에러발생!</div>
+    return <StateMessage type="error" />
   }
 
+  if (wedding == null) {
+    return null
+  }
+
+  const { date } = wedding
+
   return (
-    <div className="App">
+    <>
       <Bgm />
-      {JSON.stringify(wedding)}
-    </div>
+      <div className="App">
+        <Header date={date} />
+        <Main>{JSON.stringify(wedding)}</Main>
+      </div>
+    </>
   )
 }
 
