@@ -1,8 +1,35 @@
 .header {
+  background-color: aqua;
+
   &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+  }
+
+  &__date-box,
+  &__name-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  &__date {
+    font-size: 36px;
+  }
+
+  &__day {
+    font-size: 24px;
+  }
+
+  &__groom-name,
+  &__bride-name {
+    font-size: 55px;
+    letter-spacing: 10px;
+  }
+
+  &__icon {
+    width: 35px;
+    transform: rotate(30deg);
   }
 }

@@ -47,13 +47,13 @@ const App = () => {
     return null
   }
 
-  const { date } = wedding
+  const { date, groom, bride } = wedding
 
   return (
     <>
       <Bgm />
       <div className="App">
-        <Header date={date} />
+        <Header date={date} groomName={groom.name} brideName={bride.name} />
         <Main>{JSON.stringify(wedding)}</Main>
       </div>
     </>

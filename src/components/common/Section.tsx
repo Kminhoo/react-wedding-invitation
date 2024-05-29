@@ -1,7 +1,13 @@
 import React from 'react'
 
-const Section = ({ children }: { children: React.ReactNode }) => {
-  return <section>{children}</section>
+const Section = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className: string
+}) => {
+  return <section className={`section ${className}`}>{children}</section>
 }
 
 export default Section
