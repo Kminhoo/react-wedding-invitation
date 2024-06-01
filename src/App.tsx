@@ -55,7 +55,7 @@ const App = () => {
       <Bgm />
       <div className="App">
         <Header date={date} groomName={groom.name} brideName={bride.name} />
-        <Main>{JSON.stringify(wedding)}</Main>
+        <Main wedding={wedding}>{JSON.stringify(wedding)}</Main>
       </div>
     </>
   )

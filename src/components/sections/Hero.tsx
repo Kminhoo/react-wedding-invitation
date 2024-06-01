@@ -5,8 +5,9 @@ const Hero = () => {
   return (
     <Section className="hero">
       <div className="hero__inner">
+        <Wave className="wave__top" />
         <img src="./assets/main.jpg" alt="main wedding " />
-        <Wave />
+        <Wave className="wave__bottom" />
       </div>
     </Section>
   )

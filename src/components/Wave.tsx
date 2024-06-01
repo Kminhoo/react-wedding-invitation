@@ -1,6 +1,6 @@
-const Wave = () => {
+const Wave = ({ className }: { className: string }) => {
   return (
-    <div>
+    <div className={className}>
       <svg
         className="waves"
         viewBox="0 24 150 28"
