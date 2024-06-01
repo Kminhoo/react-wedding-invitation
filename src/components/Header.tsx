@@ -30,9 +30,9 @@ const Header = ({ date, groomName, brideName }: HeaderProps) => {
         </div>
 
         <div className="header__name-box">
-          <span>신랑</span>
+          <span className="header__name-title">신랑</span>
           <span className="header__groom-name">{groomName}</span>
-          <span>신부</span>
+          <span className="header__name-title bride">신부</span>
           <span className="header__bride-name">{brideName}</span>
         </div>
       </div>

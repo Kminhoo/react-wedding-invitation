@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 
 import { doc, getDoc } from 'firebase/firestore'
-import { db } from 'firebaseApp'
 
-import Bgm from 'components/Bgm'
-import StateMessage from 'components/common/StateMessage'
-import Header from 'components/Header'
-import Main from 'components/Main'
+import { db } from '@firebaseApp'
+
+import Bgm from '@components/Bgm'
+import StateMessage from '@components/common/StateMessage'
+import Header from '@components/Header'
+import Main from '@components/Main'
 
 import { Wedding } from 'models/wedding'
 
