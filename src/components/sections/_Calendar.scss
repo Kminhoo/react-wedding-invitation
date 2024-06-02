@@ -1,0 +1,55 @@
+.calendar {
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-top: 150px;
+	}
+
+	&__date {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__day {
+		font-size: 30px;
+		line-height: 1.5;
+	}
+
+	&__tiem {
+		font-size: 20px;
+		margin-top: 5px;
+	}
+
+	&__container {
+		margin-top: 50px;
+	}
+
+	&__D-day {
+		margin-top: 30px;
+		font-size: 24px;
+	}
+
+	.rdp {
+
+		&-caption {
+			display: none;
+		}
+
+		&-day_selected {
+			background-color: orange;
+		}
+
+		&-cell {
+			cursor: default;
+		}
+
+		&-head_cell {
+			font-size: 16px;
+			font-weight: bold;
+		}
+	}
+}

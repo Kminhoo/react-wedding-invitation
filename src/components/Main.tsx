@@ -3,7 +3,8 @@ import Hero from '@sections/Hero'
 import Info from '@sections/Info'
 import { Wedding } from 'models/wedding'
 import Invitation from '@sections/Invitation'
-import Calendar from './sections/Calendar'
+import Calendar from '@sections/Calendar'
+import ImageGallery from '@sections/ImageGallery'
 
 const Main = ({
   children,
@@ -24,7 +25,8 @@ const Main = ({
         brideName={bride.name}
       />
       <Invitation message={message} />
-      <Calendar />
+      <Calendar date={date} />
+      <ImageGallery />
     </main>
   )
 }
