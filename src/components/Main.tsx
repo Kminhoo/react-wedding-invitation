@@ -2,6 +2,7 @@ import React from 'react'
 import Hero from '@sections/Hero'
 import Info from '@sections/Info'
 import { Wedding } from 'models/wedding'
+import Invitation from '@sections/Invitation'
 
 const Main = ({
   children,
@@ -21,6 +22,7 @@ const Main = ({
         groomName={groom.name}
         brideName={bride.name}
       />
+      <Invitation />
     </main>
   )
 }
