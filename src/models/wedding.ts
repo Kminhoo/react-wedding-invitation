@@ -4,10 +4,7 @@ export interface Wedding {
   location: Location
   groom: Person & { parents: Person[] }
   bride: Person & { parents: Person[] }
-  message: {
-    intro: string
-    invitation: string
-  }
+  message: Message
   galleryImages: string[]
 }
 
@@ -33,4 +30,9 @@ export interface Account {
   bankName: string
   accountNumber: string
   kakaopayLink?: string
+}
+
+export interface Message {
+  intro: string
+  invitation: string
 }

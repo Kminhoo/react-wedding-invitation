@@ -3,6 +3,7 @@ import Hero from '@sections/Hero'
 import Info from '@sections/Info'
 import { Wedding } from 'models/wedding'
 import Invitation from '@sections/Invitation'
+import Calendar from './sections/Calendar'
 
 const Main = ({
   children,
@@ -11,7 +12,7 @@ const Main = ({
   children: React.ReactNode
   wedding: Wedding
 }) => {
-  const { date, location, groom, bride } = wedding
+  const { date, location, groom, bride, message } = wedding
 
   return (
     <main>
@@ -22,7 +23,8 @@ const Main = ({
         groomName={groom.name}
         brideName={bride.name}
       />
-      <Invitation />
+      <Invitation message={message} />
+      <Calendar />
     </main>
   )
 }
