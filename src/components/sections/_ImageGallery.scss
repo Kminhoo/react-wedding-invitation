@@ -1,0 +1,32 @@
+.gallery {
+    &__inner {
+        margin: 0 auto;
+    }
+
+    &__album {
+        height: 2000px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 20px 20px;
+
+        :nth-child(even) {
+            grid-area: span 2;
+        }
+    }
+
+    &__item {
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}

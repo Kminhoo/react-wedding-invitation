@@ -13,7 +13,7 @@ const Main = ({
   children: React.ReactNode
   wedding: Wedding
 }) => {
-  const { date, location, groom, bride, message } = wedding
+  const { date, location, groom, bride, message, galleryImages } = wedding
 
   return (
     <main>
@@ -26,7 +26,7 @@ const Main = ({
       />
       <Invitation message={message} />
       <Calendar date={date} />
-      <ImageGallery />
+      <ImageGallery images={galleryImages} />
     </main>
   )
 }
