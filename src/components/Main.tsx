@@ -5,7 +5,8 @@ import { Wedding } from 'models/wedding'
 import Invitation from '@sections/Invitation'
 import Calendar from '@sections/Calendar'
 import ImageGallery from '@sections/ImageGallery'
-import Locations from '@components/sections/Locations'
+import Locations from '@sections/Locations'
+import Navigation from '@sections/Navigation'
 
 const Main = ({
   children,
@@ -29,6 +30,7 @@ const Main = ({
       <ImageGallery images={galleryImages} />
       <Calendar date={date} />
       <Locations location={location} />
+      <Navigation link={location.link} />
     </main>
   )
 }
