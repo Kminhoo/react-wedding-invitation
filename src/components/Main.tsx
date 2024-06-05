@@ -25,8 +25,8 @@ const Main = ({
         brideName={bride.name}
       />
       <Invitation message={message} />
-      <Calendar date={date} />
       <ImageGallery images={galleryImages} />
+      <Calendar date={date} />
     </main>
   )
 }
