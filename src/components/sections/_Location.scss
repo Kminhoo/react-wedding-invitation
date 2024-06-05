@@ -1,0 +1,52 @@
+.location {
+    &__inner {
+        margin: 100px auto 50px;
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+
+        &-main {
+            font-size: 40px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        &-sub {
+            font-size: 24px;
+        }
+    }
+
+    &__address-box {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    &__name {
+        font-size: 35px;
+    }
+
+    &__address {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    &__container {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__map {
+        width: 90%;
+        height: 400px;
+    }
+}

@@ -5,6 +5,7 @@ import { Wedding } from 'models/wedding'
 import Invitation from '@sections/Invitation'
 import Calendar from '@sections/Calendar'
 import ImageGallery from '@sections/ImageGallery'
+import Locations from '@components/sections/Locations'
 
 const Main = ({
   children,
@@ -27,6 +28,7 @@ const Main = ({
       <Invitation message={message} />
       <ImageGallery images={galleryImages} />
       <Calendar date={date} />
+      <Locations location={location} />
     </main>
   )
 }
