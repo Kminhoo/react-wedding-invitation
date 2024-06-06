@@ -6,6 +6,7 @@ export interface Wedding {
   bride: Person & { parents: Person[] }
   message: Message
   galleryImages: string[]
+  comments: Comment[]
 }
 
 export interface Location {
@@ -36,4 +37,11 @@ export interface Account {
 export interface Message {
   intro: string
   invitation: string
+}
+
+export interface Comment {
+  name: string
+  comment: string
+  password: string
+  createdAt: string
 }
