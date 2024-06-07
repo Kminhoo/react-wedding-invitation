@@ -2,6 +2,7 @@ import Accordion from '@components/common/Accordion'
 import Section from '@components/common/Section'
 import Text from '@components/common/Text'
 import { Person, Wedding } from 'models/wedding'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 interface AccountProps {
   groom: Wedding['groom']
@@ -75,7 +76,12 @@ const ContactInfo = ({ name, account, phoneNumber }: Person) => {
           <a href={`tel: ${phoneNumber}`}>전화</a>
         </li>
         <li>
-          <button>복사</button>
+          <CopyToClipboard
+            text={`${account.bankName} ${account.accountNumber}`}
+            onCopy={() => alert('계좌번호를 복사했습니다.')}
+          >
+            <button>복사</button>
+          </CopyToClipboard>
         </li>
         {account.kakaopayLink && (
           <li>

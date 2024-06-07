@@ -10,6 +10,7 @@ import Header from '@components/Header'
 import Main from '@components/Main'
 
 import { Wedding } from 'models/wedding'
+import Footer from '@components/Footer'
 
 const App = () => {
   const [loading, setLoading] = useState<Boolean>(false)
@@ -56,6 +57,7 @@ const App = () => {
         <Bgm />
         <Header date={date} groomName={groom.name} brideName={bride.name} />
         <Main wedding={wedding} />
+        <Footer />
       </div>
     </>
   )

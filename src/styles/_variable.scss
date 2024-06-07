@@ -1,2 +1,32 @@
 :root {
 }
+
+$breakpoint-mobile: 320px;
+$breakpoint-tabletToMobile: 535px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptopToDesktop: 960px;
+$breakpoint-desktop: 1024px;
+
+@mixin mobile {
+  @media (min-width: #{$breakpoint-mobile}) and (max-width:#{$breakpoint-tabletToMobile - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tabletToMobile}) and (max-width:#{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+// @mixin tabletToLaptop {
+//   @media (min-width: #{$breakpoint-tablet}) and (max-width:#{$breakpoint-laptopToDesktop - 1px}) {
+//     @content;
+//   }
+// }
+
+// @mixin deskttop {
+//   @media (min-width: $breakpoint-desktop) {
+//     @content;
+//   }
+// }
