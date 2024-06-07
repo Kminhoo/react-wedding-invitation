@@ -1,0 +1,67 @@
+.account {
+  &__inner {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__title {
+    text-align: center;
+
+    &-main {
+      font-size: 40px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    &-sub {
+      font-size: 20px;
+      margin-top: 8px;
+    }
+  }
+
+  &__box {
+    margin-top: 50px;
+  }
+
+  &__message {
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  &__accordion {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.contact {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+}

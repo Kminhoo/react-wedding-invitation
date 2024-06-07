@@ -27,7 +27,6 @@ const GuestBook = () => {
       }
     })
 
-    // 컴포넌트가 언마운트될 때 구독 해제
     return () => unsubscribe()
   }, [])
 
