@@ -8,7 +8,7 @@ import ImageGallery from '@sections/ImageGallery'
 import Locations from '@sections/Locations'
 import Navigation from '@sections/Navigation'
 import WayToCome from '@sections/WayToCome'
-import Comment from '@sections/Comment'
+import GuestBook from '@sections/GuestBook'
 
 const Main = ({
   children,
@@ -17,8 +17,7 @@ const Main = ({
   children: React.ReactNode
   wedding: Wedding
 }) => {
-  const { date, location, groom, bride, message, galleryImages, comments } =
-    wedding
+  const { date, location, groom, bride, message, galleryImages } = wedding
 
   return (
     <main>
@@ -35,7 +34,8 @@ const Main = ({
       <Locations location={location} />
       <Navigation link={location.link} />
       <WayToCome location={location} />
-      <Comment comments={comments} />
+      {/* <GuestBook comments={comments} /> */}
+      <GuestBook />
     </main>
   )
 }

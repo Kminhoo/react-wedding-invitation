@@ -70,21 +70,23 @@ const CommentForm = () => {
 
   return (
     <form className="comment__form" onSubmit={onSubmit}>
-      <input
-        id="name"
-        name="name"
-        onChange={onChangeName}
-        value={name}
-        required
-        placeholder="이름을 입력해 주세요"
-      />
-      <input
-        onChange={onChangePassWord}
-        type="password"
-        name="password"
-        value={password}
-        required
-      />
+      <div className="comment__info">
+        <input
+          id="name"
+          name="name"
+          onChange={onChangeName}
+          value={name}
+          required
+          placeholder="이름을 입력해 주세요"
+        />
+        <input
+          onChange={onChangePassWord}
+          type="password"
+          name="password"
+          value={password}
+          required
+        />
+      </div>
       <textarea
         className="comment__form-area"
         id="comment"
