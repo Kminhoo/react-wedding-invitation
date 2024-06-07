@@ -7,6 +7,7 @@ export interface Wedding {
   message: Message
   galleryImages: string[]
   comments: Comment[]
+  accountMessage: string
 }
 
 export interface Location {

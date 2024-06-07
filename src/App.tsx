@@ -52,10 +52,10 @@ const App = () => {
 
   return (
     <>
-      <Bgm />
       <div className="App">
+        <Bgm />
         <Header date={date} groomName={groom.name} brideName={bride.name} />
-        <Main wedding={wedding}>{JSON.stringify(wedding)}</Main>
+        <Main wedding={wedding} />
       </div>
     </>
   )

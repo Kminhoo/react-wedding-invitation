@@ -81,6 +81,7 @@ const CommentForm = () => {
         />
         <input
           onChange={onChangePassWord}
+          id="password"
           type="password"
           name="password"
           value={password}
