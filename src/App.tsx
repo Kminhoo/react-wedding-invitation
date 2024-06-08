@@ -49,7 +49,7 @@ const App = () => {
     return null
   }
 
-  const { date, groom, bride } = wedding
+  const { date, groom, bride, footerMessage } = wedding
 
   return (
     <>
@@ -57,7 +57,12 @@ const App = () => {
         <Bgm />
         <Header date={date} groomName={groom.name} brideName={bride.name} />
         <Main wedding={wedding} />
-        <Footer />
+        <Footer
+          message={footerMessage}
+          date={date}
+          groomName={groom.name}
+          brideName={bride.name}
+        />
       </div>
     </>
   )
