@@ -1,11 +1,11 @@
 // reset
 @import './styles/reset';
 
-// global
-@import './styles/global';
-
 // variable
 @import './styles/variable';
+
+// global
+@import './styles/global';
 
 // components
 @import './App';
@@ -18,6 +18,7 @@
 @import './components/CommentForm';
 @import './components/common/Accordion';
 @import './components/Footer';
+@import './components/Timer';
 
 // sections
 @import './components/sections/Hero';

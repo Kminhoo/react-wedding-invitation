@@ -31,6 +31,11 @@
 	&__D-day {
 		margin-top: 30px;
 		font-size: 24px;
+		display: flex;
+		gap: 5px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.rdp {
@@ -50,6 +55,17 @@
 		&-head_cell {
 			font-size: 16px;
 			font-weight: bold;
+		}
+
+		.rdp-table {
+			tr > :first-child {
+				color: red; /* 배경색을 예로 들었습니다 */
+			  }
+			  
+			  /* 마지막 자식 요소에 스타일 적용 */
+			  tr > :last-child {
+				color: red; /* 배경색을 예로 들었습니다 */
+			  }
 		}
 	}
 }

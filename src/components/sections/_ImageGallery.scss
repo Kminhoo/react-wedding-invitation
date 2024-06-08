@@ -1,7 +1,8 @@
 .gallery {
     &__inner {
-        margin: 100px auto 0;
+        margin-top: 100px;
         position: relative;
+        background: #fff;
     }
 
     &__title {
@@ -11,16 +12,16 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 8px;
 
         &-main {
-            font-size: 40px;
+            font-size: 36px;
+            color: #FF7979;
             font-weight: bold;
             letter-spacing: 2px;
         }
 
         &-sub {
-            font-size: 24px;
+            font-size: 30px;
         }
     }
 
@@ -75,8 +76,21 @@
         height: 50px;
         border: none;
         outline: none;
-        border-radius: 10px;
         position: relative;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    &__btn-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    &__btn-icon.open {
+        transform: rotate(180deg);
     }
 
     &__btn.show {

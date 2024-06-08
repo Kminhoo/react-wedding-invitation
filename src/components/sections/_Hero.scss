@@ -1,13 +1,13 @@
 .hero {
   &__inner {
     width: 100%;
-    height: 900px;
+    height: 800px;
     overflow: hidden;
     position: relative;
   }
 
   img {
-    width: 1024px;
+    max-width: 800px;
     filter: grayscale(100%);
   }
 }

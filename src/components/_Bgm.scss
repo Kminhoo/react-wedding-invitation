@@ -1,12 +1,12 @@
 .bgm {
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 40px;
   z-index: 10;
   // transition: all 0.2s ease-in-out;
 
   &__icon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
   }
 }

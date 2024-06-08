@@ -1,6 +1,7 @@
 .location {
     &__inner {
-        margin: 100px auto 50px;
+        margin-top: 100px;
+        background-color: #fff;
     }
 
     &__title {
@@ -10,13 +11,15 @@
         gap: 5px;
 
         &-main {
-            font-size: 40px;
+            font-size: 36px;
             font-weight: bold;
             letter-spacing: 2px;
+            color: pink;
         }
 
         &-sub {
-            font-size: 24px;
+            margin-top: 3px;
+            font-size: 30px;
         }
     }
 

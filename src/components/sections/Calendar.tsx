@@ -1,6 +1,7 @@
+import Timer from '@components/Timer'
 import Section from '@components/common/Section'
 
-import { parseISO, format, differenceInDays } from 'date-fns'
+import { parseISO, format } from 'date-fns'
 import { ko } from 'date-fns/locale'
 
 import { DayPicker } from 'react-day-picker'
@@ -8,8 +9,6 @@ import 'react-day-picker/dist/style.css'
 
 const Calendar = ({ date }: { date: string }) => {
   const weddingDate = parseISO(date)
-
-  const today = new Date()
 
   return (
     <Section className="calendar">
@@ -32,10 +31,7 @@ const Calendar = ({ date }: { date: string }) => {
           />
         </div>
         <div className="calendar__D-day">
-          <p>
-            경호와 해영이의 결혼식 까지{' '}
-            <span>{differenceInDays(weddingDate, today)}</span>일 남았습니다.
-          </p>
+          <Timer date={date} />
         </div>
       </div>
     </Section>

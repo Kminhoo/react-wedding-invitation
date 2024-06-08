@@ -13,7 +13,7 @@ const Vehicle = ({
         ) : title === '버스' ? (
           <Bus className="vehicle__icon" />
         ) : (
-          <Car className="vehicle__icon" />
+          <Car className="vehicle__icon car" />
         )}
         <span>{title}</span>
       </div>
