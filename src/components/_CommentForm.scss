@@ -3,4 +3,49 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 500px;
+    gap: 20px;
+
+    &-info {
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    &-name,
+    &-password {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        label {
+            font-size: 14px;
+        }
+
+        input {
+            height: 30px;
+            width: 150px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid rgba(27, 31, 35, 0.15);
+        }
+    }
+
+    &-area {
+        width: 400px;
+        height: 50px;
+        border: none;
+        resize: none;
+    }
+
+    &-submit-btn {
+        width: 100px;
+        height: 30px;
+        border: 1px solid rgba(27, 31, 35, 0.15);
+        border-radius: 20px;
+        outline: none;
+        cursor: pointer;
+    }
 }

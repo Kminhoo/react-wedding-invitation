@@ -45,7 +45,7 @@
     }
 
     &__container.show {
-        overflow: none;
+        overflow: unset;
         max-height: 3000px;
     }
 

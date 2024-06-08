@@ -90,16 +90,24 @@ const GuestBook = () => {
           <span className="guest__book__title-main">GEUST BOOK</span>
           <p className="guest__book__title-sub">방명록</p>
         </div>
-        <div className="guest__book__box">
+        <div className="guest__book-box">
           {comments?.map((cmt, index) => (
-            <div key={index}>
-              <span>{cmt.name}</span>
-              <span>{cmt.createdAt}</span>
-              <p>{cmt.comment}</p>
-              <DeleteComment
-                onClick={() => onDeleteClick(index)}
-                className="guest__book__icon"
-              />
+            <div className="guest__book-comment" key={index}>
+              <div className="guest__book-comment-box">
+                <div className="guest__book-comment-title">
+                  <span className="guest__book-comment-title-name">
+                    {cmt.name}
+                  </span>
+                  <span className="guest__book-comment-title-date">
+                    {cmt.createdAt}
+                  </span>
+                </div>
+                <DeleteComment
+                  onClick={() => onDeleteClick(index)}
+                  className="guest__book__icon"
+                />
+              </div>
+              <p className="guest__book-comment-content">{cmt.comment}</p>
             </div>
           ))}
         </div>
