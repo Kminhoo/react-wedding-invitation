@@ -11,6 +11,7 @@ import Main from '@components/Main'
 
 import { Wedding } from 'models/wedding'
 import Footer from '@components/Footer'
+import Maple from '@components/common/Maple'
 
 const App = () => {
   const [loading, setLoading] = useState<Boolean>(false)
@@ -54,6 +55,7 @@ const App = () => {
   return (
     <>
       <div className="App">
+        <Maple />
         <Bgm />
         <Header date={date} groomName={groom.name} brideName={bride.name} />
         <Main wedding={wedding} />

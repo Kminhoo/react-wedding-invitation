@@ -1,0 +1,31 @@
+.maple-container {
+  position: relative;
+  z-index: 10;
+}
+
+.maple {
+  position: absolute;
+  top: -50px;
+  width: 25px;
+  height: 25px;
+  // background-color: orange;
+  animation: fall linear 20s;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(500px); // 오른쪽으로 이동
+  }
+  50% {
+    transform: translateX(0); // 원래 위치로
+  }
+  75% {
+    transform: translateX(-500px); // 왼쪽으로 이동
+  }
+  100% {
+    transform: translateY(100vh) translateX(0); // 최종적으로 아래로 이동하며 원래 위치로 돌아옴
+  }
+}
