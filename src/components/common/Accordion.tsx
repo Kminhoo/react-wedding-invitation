@@ -12,7 +12,7 @@ const Accordion = ({ label, children }: PropsWithChildren<AccordionProps>) => {
   }
 
   return (
-    <div className="accordion">
+    <div className={`accordion ${showAccordion && 'open'}`}>
       <div className="accordion__title">
         <span>{label}</span>
         <AccordionArrow

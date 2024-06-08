@@ -64,7 +64,7 @@ const Footer = ({ message, date, groomName, brideName }: FooterProps) => {
         </div>
 
         <div className="footer__share">
-          <button onClick={handleShareKakao}>
+          <button className="footer__share-btn" onClick={handleShareKakao}>
             <KaKao />
             <span>카카오톡으로 청첩장 공유하기</span>
           </button>
