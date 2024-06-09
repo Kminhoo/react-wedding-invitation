@@ -1,55 +1,79 @@
 .location {
-    &__inner {
-        margin-top: 100px;
-        background-color: #fff;
+  &__inner {
+    margin-top: 100px;
+    background-color: #fff;
+
+    @include mobile {
+      margin-top: 150px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    &-main {
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: pink;
+
+      @include mobile {
+        font-size: 28px;
+      }
     }
 
-    &__title {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
+    &-sub {
+      margin-top: 3px;
+      font-size: 30px;
 
-        &-main {
-            font-size: 36px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: pink;
-        }
-
-        &-sub {
-            margin-top: 3px;
-            font-size: 30px;
-        }
+      @include mobile {
+        font-size: 20px;
+      }
     }
+  }
 
-    &__address-box {
-        margin-top: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-    }
+  &__address-box {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 
-    &__name {
-        font-size: 35px;
+    @include mobile {
+      gap: 15px;
     }
+  }
 
-    &__address {
-        text-align: center;
-        font-size: 24px;
-    }
+  &__name {
+    font-size: 35px;
 
-    &__container {
-        margin-top: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    @include mobile {
+      font-size: 22px;
     }
+  }
 
-    &__map {
-        width: 90%;
-        height: 400px;
+  &__address {
+    text-align: center;
+    font-size: 24px;
+
+    @include mobile {
+      font-size: 16px;
     }
+  }
+
+  &__container {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__map {
+    width: 90%;
+    height: 400px;
+  }
 }

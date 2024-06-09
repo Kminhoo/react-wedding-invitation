@@ -7,7 +7,6 @@
     align-items: flex-start;
     justify-content: center;
     padding-bottom: 50px;
-    border-bottom: 1px dashed;
     padding: 0 20px;
     background: #fff;
   }
@@ -18,35 +17,45 @@
     gap: 12px;
 
     &-main {
-        font-size: 24px;
-        font-weight: bold;
+      font-size: 24px;
+      font-weight: bold;
+
+      @include mobile {
+        font-size: 20px;
+      }
     }
 
     &-sub {
-        font-weight: 16px;
+      font-weight: 16px;
+
+      @include mobile {
+        font-size: 14px;
+      }
     }
-}
-  
+  }
+
   &__container {
+    width: 100%;
     margin: 50px auto 0;
     padding-bottom: 50px;
+    border-bottom: 1px dashed;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 50px;
 
     a {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-        padding: 5px;
-        border-radius: 5px;
-        color: black;
-        background: #fafbfc;
-        border: 1px solid rgba(27, 31, 35, 0.15);
-        font-size: 14px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 5px;
+      border-radius: 5px;
+      color: black;
+      background: #fafbfc;
+      border: 1px solid rgba(27, 31, 35, 0.15);
+      font-size: 14px;
     }
   }
 }

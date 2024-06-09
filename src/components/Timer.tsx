@@ -65,7 +65,7 @@ const Timer = ({ date }: { date: string }) => {
           <span>{secondsLeft}</span>
         </div>
       </div>
-      <p>
+      <p className="timer__message">
         경호와 해영이의 결혼식 까지{' '}
         <span className="timer__day">
           {differenceInDays(weddingDate, today)}

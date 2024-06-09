@@ -1,50 +1,63 @@
 .delete {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: black;
-    opacity: 0.85;
-    z-index: 30;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.85;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 20px;
 
+    &-desc {
+      color: orange;
+      font-size: 24px;
 
-    &__container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-
-        &-desc {
-            color: orange;
-            font-size: 24px;
-        }
-
-        input {
-            width: 400px;
-            height: 30px;
-            border-radius: 5px;
-            outline: none;
-            border: none;
-            padding-left: 10px;
-        }
-
-        &-btns {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        &-btn {
-            width: 100px;
-            height: 35px;
-            background-color: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+      @include mobile {
+        font-size: 16px;
+      }
     }
+
+    input {
+      width: 400px;
+      height: 30px;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      padding-left: 10px;
+
+      @include mobile {
+        width: 300px;
+      }
+    }
+
+    &-btns {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &-btn {
+      width: 100px;
+      height: 35px;
+      background-color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+
+      @include mobile {
+        width: 80px;
+        height: 30px;
+        font-size: 16px;
+      }
+    }
+  }
 }
