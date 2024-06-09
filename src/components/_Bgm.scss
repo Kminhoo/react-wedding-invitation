@@ -4,9 +4,19 @@
   left: 40px;
   z-index: 10;
   // transition: all 0.2s ease-in-out;
+  @include mobile {
+    top: 10px;
+    left: 10px;
+  }
 
   &__icon {
     width: 35px;
     height: 35px;
+
+
+    @include mobile {
+      width: 27px;
+      height: 27px;
+    }
   }
 }

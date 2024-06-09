@@ -17,7 +17,7 @@ const Calendar = ({ date }: { date: string }) => {
           <span className="calendar__day">
             {format(weddingDate, 'yyyy.MM.dd')}
           </span>
-          <span className="calendar__tiem">
+          <span className="calendar__item">
             {format(weddingDate, 'aaa h시 eeee', { locale: ko })}
           </span>
         </div>

@@ -8,6 +8,10 @@
     justify-content: center;
     gap: 20px;
     padding: 100px 20px 50px;
+
+    @include mobile {
+      gap: 35px;
+    }
   }
 
   &__date-box,
@@ -21,16 +25,28 @@
 
   &__date {
     font-size: 50px;
+
+    @include mobile {
+      font-size: 30px;
+    }
   }
 
   &__day {
     font-size: 36px;
+
+    @include mobile {
+      font-size: 26px;
+    }
   }
 
   &__groom-name,
   &__bride-name {
     font-size: 55px;
     letter-spacing: 10px;
+
+    @include mobile {
+      font-size: 28px;
+    }
   }
 
   &__name-title {
@@ -38,6 +54,10 @@
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 5px;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
   .bride {

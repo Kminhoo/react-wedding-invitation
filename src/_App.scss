@@ -8,4 +8,11 @@
   padding: 0 20px;
   box-sizing: content-box;
   background-color: #fff;
+
+  @include mobile {
+    margin: 0;
+    max-width: 600px;
+    padding: 0;
+    background-color: #fff;
+  }
 }

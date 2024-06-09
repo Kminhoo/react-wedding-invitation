@@ -2,10 +2,9 @@ $bodyColor: #efefef;
 $AppColor: #fff;
 
 
-$breakpoint-mobile: 320px;
-$breakpoint-tabletToMobile: 535px;
-$breakpoint-tablet: 768px;
-$breakpoint-laptopToDesktop: 960px;
+$breakpoint-mobile: 300px;
+$breakpoint-tabletToMobile: 601px;
+$breakpoint-laptopToDesktop: 961px;
 $breakpoint-desktop: 1024px;
 
 @mixin mobile {
@@ -15,19 +14,8 @@ $breakpoint-desktop: 1024px;
 }
 
 @mixin tablet {
-  @media (min-width: #{$breakpoint-tabletToMobile}) and (max-width:#{$breakpoint-tablet - 1px}) {
+  @media (min-width: #{$breakpoint-tabletToMobile}) and (max-width:#{$breakpoint-laptopToDesktop - 1px}) {
     @content;
   }
 }
 
-// @mixin tabletToLaptop {
-//   @media (min-width: #{$breakpoint-tablet}) and (max-width:#{$breakpoint-laptopToDesktop - 1px}) {
-//     @content;
-//   }
-// }
-
-// @mixin deskttop {
-//   @media (min-width: $breakpoint-desktop) {
-//     @content;
-//   }
-// }
