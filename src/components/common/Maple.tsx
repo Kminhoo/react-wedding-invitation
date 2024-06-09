@@ -5,11 +5,6 @@ const Maple = () => {
     const newMapleGenerate = () => {
       const mapleContainer = document.querySelector('.maple-container')
       const mapleBox = document.createElement('div')
-      const mapleImage = document.createElement('img')
-      mapleImage.src = './assets/mapleLeaf.png'
-      mapleImage.style.height = '25px'
-      mapleImage.style.width = '25px'
-      mapleBox.appendChild(mapleImage)
       mapleBox.classList.add('maple')
       mapleBox.style.left = Math.random() * window.innerWidth + 'px'
       mapleBox.style.opacity = `${Math.random()}`
@@ -21,7 +16,7 @@ const Maple = () => {
       }, 300000)
     }
 
-    const interval = setInterval(newMapleGenerate, 500)
+    const interval = setInterval(newMapleGenerate, 300)
 
     return () => clearInterval(interval)
   }, [])

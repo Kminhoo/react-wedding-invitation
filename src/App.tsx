@@ -54,8 +54,8 @@ const App = () => {
 
   return (
     <>
+      <Maple />
       <div className="App">
-        <Maple />
         <Bgm />
         <Header date={date} groomName={groom.name} brideName={bride.name} />
         <Main wedding={wedding} />

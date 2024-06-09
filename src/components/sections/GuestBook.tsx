@@ -5,6 +5,7 @@ import CommentForm from '@components/CommentForm'
 import Section from '@components/common/Section'
 import { Comment } from 'models/wedding'
 import { useEffect } from 'react'
+import DeleteModal from '@components/DeleteModal'
 
 const GuestBook = () => {
   const [modal, setModal] = useState<boolean>(false)
@@ -50,24 +51,25 @@ const GuestBook = () => {
 
     const commentToDelete = comments[selectedCommentIndex]
 
-    if (commentToDelete.password === password) {
-      const docRef = doc(db, 'wedding', 'v3eNky8xXowBjARen4i5')
-
-      try {
+    try {
+      if (commentToDelete.password === password) {
+        const docRef = doc(db, 'wedding', 'v3eNky8xXowBjARen4i5')
         await updateDoc(docRef, {
           comments: arrayRemove(commentToDelete),
         })
         alert('댓글이 삭제되었습니다.')
-      } catch (error) {
-        console.error('댓글 삭제 중 오류가 발생했습니다:', error)
-      }
-    } else {
-      alert('비밀번호가 일치하지 않습니다.')
-    }
 
-    setModal(false)
-    setPassword('')
-    setSelectedCommentIndex(null)
+        setModal(false)
+        setPassword('')
+        setSelectedCommentIndex(null)
+      } else {
+        alert('비밀번호가 일치하지 않습니다.')
+        setModal(true)
+        setPassword('')
+      }
+    } catch (error) {
+      console.error('댓글 삭제 중 오류가 발생했습니다:', error)
+    }
   }
 
   if (comments.length === 0) {
@@ -112,15 +114,12 @@ const GuestBook = () => {
           ))}
         </div>
         {modal && (
-          <div>
-            <input
-              onChange={onChange}
-              name="inputPassword"
-              value={password}
-              type="password"
-            />
-            <button onClick={onConfirmDelete}>삭제</button>
-          </div>
+          <DeleteModal
+            onChange={onChange}
+            password={password}
+            onClick={onConfirmDelete}
+            setModal={setModal}
+          />
         )}
         <div className="guest__book__input-box">
           <CommentForm />
