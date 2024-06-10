@@ -10,6 +10,7 @@ import Navigation from '@sections/Navigation'
 import WayToCome from '@sections/WayToCome'
 import GuestBook from '@sections/GuestBook'
 import Account from './sections/Account'
+import Rsvp from './sections/Rsvp'
 
 const Main = ({ wedding }: { wedding: Wedding }) => {
   const {
@@ -39,6 +40,7 @@ const Main = ({ wedding }: { wedding: Wedding }) => {
       <WayToCome location={location} />
       <GuestBook />
       <Account message={accountMessage} groom={groom} bride={bride} />
+      <Rsvp />
     </main>
   )
 }
