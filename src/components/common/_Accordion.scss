@@ -16,6 +16,12 @@
     padding: 10px;
     background: #e1dbdb;
     border-radius: 5px;
+
+    span {
+      @include mobile {
+        font-size: 14px;
+      }
+    }
   }
 
   &__icon {

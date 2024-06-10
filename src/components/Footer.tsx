@@ -65,7 +65,7 @@ const Footer = ({ message, date, groomName, brideName }: FooterProps) => {
 
         <div className="footer__share">
           <button className="footer__share-btn" onClick={handleShareKakao}>
-            <KaKao />
+            <KaKao className="footer__share-icon" />
             <span>카카오톡으로 청첩장 공유하기</span>
           </button>
         </div>
@@ -76,9 +76,9 @@ const Footer = ({ message, date, groomName, brideName }: FooterProps) => {
 
 export default Footer
 
-const KaKao = () => {
+const KaKao = ({ className }: { className: string }) => {
   return (
-    <svg width="25" height="25" viewBox="0 0 256 256">
+    <svg className={className} width="25" height="25" viewBox="0 0 256 256">
       <path
         fill="#FFE812"
         d="M256 236c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 8.954 8.954 0 20 0h216c11.046 0 20 8.954 20 20v216z"
