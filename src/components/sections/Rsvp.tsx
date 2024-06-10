@@ -29,7 +29,7 @@ const Rsvp = () => {
             <span>참석 여부 전달하기</span>
           </button>
         </div>
-        {response && <RsvpForm />}
+        {response && <RsvpForm setResponse={setResponse} />}
       </div>
     </Section>
   )
