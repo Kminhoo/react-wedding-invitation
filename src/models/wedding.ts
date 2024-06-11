@@ -9,6 +9,17 @@ export interface Wedding {
   comments: Comment[]
   accountMessage: string
   footerMessage: string
+  attendCheck: {
+    groom: AttendCheck[]
+    bride: AttendCheck[]
+  }
+}
+
+export interface AttendCheck {
+  name: string
+  phoneNumber: string
+  attend: boolean
+  count: number
 }
 
 export interface Location {

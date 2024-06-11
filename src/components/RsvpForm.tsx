@@ -1,3 +1,5 @@
+import { db } from '@firebaseApp'
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
 import React, { SetStateAction, useState } from 'react'
 
 const RsvpForm = ({
@@ -58,15 +60,49 @@ const RsvpForm = ({
     const {
       target: { name, value },
     } = e
-    if (name === 'contact') {
+    if (name === 'count') {
       setCount(value)
     }
+  }
+
+  const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    try {
+      if (attend) {
+        const docRef = doc(db, 'wedding', 'v3eNky8xXowBjARen4i5')
+
+        const attendObj = {
+          name,
+          phoneNumber,
+          count,
+          person,
+        }
+
+        await updateDoc(docRef, {
+          [`attendCheck.${person}`]: arrayUnion(attendObj),
+        })
+
+        alert('참석여부를 전달했습니다.')
+      } else {
+        alert('참석여부를 전달했습니다.')
+      }
+    } catch (error) {
+      console.log(e)
+    }
+
+    setName('')
+    setPhoneNumber('')
+    setAttend(null)
+    setPerson('')
+    setCount('')
+    setResponse(false)
   }
 
   return (
     <div className="rsvp-form__container">
       <div className="rsvp-form__box">
-        <form className="rsvp-form">
+        <form className="rsvp-form" onSubmit={handleSubmit}>
           <div className="rsvp-form__title">
             <h4>참석여부 전달하기</h4>
             <CloseIcon
@@ -155,6 +191,7 @@ const RsvpForm = ({
               type="text"
               id="name"
               name="name"
+              value={name}
               required
               onChange={handleCheckName}
             />
@@ -166,6 +203,7 @@ const RsvpForm = ({
               placeholder="(필수) 대표자 연락처"
               type="text"
               name="contact"
+              value={phoneNumber}
               id="contact"
               onChange={handleCheckPhone}
               required
@@ -179,6 +217,7 @@ const RsvpForm = ({
                 placeholder="총 인원수를 입력하세요."
                 type="text"
                 name="count"
+                value={count}
                 id="count"
                 required
                 onChange={handleCheckCount}
@@ -201,7 +240,7 @@ const RsvpForm = ({
           </div>
 
           <div className="rsvp-form__submit-btn">
-            <button>
+            <button type="submit">
               <Check className="rsvp-form__check-icon" />
               <span>참석여부 전달</span>
             </button>
