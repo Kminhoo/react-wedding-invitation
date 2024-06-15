@@ -72,6 +72,14 @@
     }
   }
 
+  &-no-comment {
+    font-size: 26px;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
   &-comment {
     width: 500px;
     display: flex;
