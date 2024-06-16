@@ -44,6 +44,10 @@
     justify-content: center;
     gap: 50px;
 
+    @include mobile {
+      gap: 20px;
+    }
+
     a {
       display: flex;
       flex-direction: row;
@@ -56,6 +60,23 @@
       background: #fafbfc;
       border: 1px solid rgba(27, 31, 35, 0.15);
       font-size: 14px;
+
+      @include mobile {
+        width: 100px;
+      }
+
+      img {
+        @include mobile {
+          width: 25px;
+          height: 25px;
+        }
+      }
+
+      span {
+        @include mobile {
+          font-size: 12px;
+        }
+      }
     }
   }
 }
