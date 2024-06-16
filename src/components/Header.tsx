@@ -1,4 +1,5 @@
 import { parseISO, format, getDay } from 'date-fns'
+import MotionInner from './common/MotionInner'
 
 interface HeaderProps {
   date: string
@@ -21,7 +22,7 @@ const Header = ({ date, groomName, brideName }: HeaderProps) => {
 
   return (
     <header className="header">
-      <div className="header__inner">
+      <MotionInner className="header__inner">
         <div className="header__date-box">
           <span className="header__date">
             {format(weddingDate, 'yy. MM. dd')}
@@ -35,7 +36,7 @@ const Header = ({ date, groomName, brideName }: HeaderProps) => {
           <span className="header__name-title bride">신부</span>
           <span className="header__bride-name">{brideName}</span>
         </div>
-      </div>
+      </MotionInner>
     </header>
   )
 }

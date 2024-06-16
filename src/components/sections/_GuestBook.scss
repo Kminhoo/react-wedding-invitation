@@ -132,4 +132,21 @@
     align-items: center;
     justify-content: space-between;
   }
+
+  &-comment-more {
+    margin-top: 20px;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    &-btn {
+      width: 30px;
+      height: 30px;
+    }
+  }
 }

@@ -1,9 +1,10 @@
 import Section from '@components/common/Section'
+import MotionInner from '@components/common/MotionInner'
 
 const Navigation = ({ link }: { link: string[] }) => {
   return (
     <Section className="navigation">
-      <div className="navigation__inner">
+      <MotionInner className="navigation__inner">
         <div className="navigation__title">
           <span className="navigation__title-main">길찾기</span>
           <p className="navigation__title-sub">
@@ -26,7 +27,7 @@ const Navigation = ({ link }: { link: string[] }) => {
             <span>네이버 지도</span>
           </a>
         </div>
-      </div>
+      </MotionInner>
     </Section>
   )
 }

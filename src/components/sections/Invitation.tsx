@@ -1,4 +1,5 @@
 import Section from '@components/common/Section'
+import MotionInner from '@components/common/MotionInner'
 
 import Text from '@components/common/Text'
 
@@ -8,7 +9,7 @@ const Invitation = ({ message }: { message: Message }) => {
   console.log(message.intro)
   return (
     <Section className="invitation">
-      <div className="invitation__inner">
+      <MotionInner className="invitation__inner">
         <div className="invitation__title">
           <span className="invitation__title-main">INVITATION</span>
           <span className="invitation__title-sub">
@@ -20,7 +21,7 @@ const Invitation = ({ message }: { message: Message }) => {
           <img src="./assets/file.jpg" alt="wedding message" />
         </div>
         <Text className="invitation__message">{message.invitation}</Text>
-      </div>
+      </MotionInner>
     </Section>
   )
 }

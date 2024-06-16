@@ -1,5 +1,6 @@
 import Timer from '@components/Timer'
 import Section from '@components/common/Section'
+import MotionInner from '@components/common/MotionInner'
 
 import { parseISO, format } from 'date-fns'
 import { ko } from 'date-fns/locale'
@@ -12,7 +13,7 @@ const Calendar = ({ date }: { date: string }) => {
 
   return (
     <Section className="calendar">
-      <div className="calendar__inner">
+      <MotionInner className="calendar__inner">
         <div className="calendar__date">
           <span className="calendar__day">
             {format(weddingDate, 'yyyy.MM.dd')}
@@ -33,7 +34,7 @@ const Calendar = ({ date }: { date: string }) => {
         <div className="calendar__D-day">
           <Timer date={date} />
         </div>
-      </div>
+      </MotionInner>
     </Section>
   )
 }

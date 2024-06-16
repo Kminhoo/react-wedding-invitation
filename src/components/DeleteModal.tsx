@@ -1,4 +1,4 @@
-import React, { SetStateAction } from 'react'
+import React, { SetStateAction, useEffect } from 'react'
 
 interface DeleteModalProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -13,6 +13,30 @@ const DeleteModal = ({
   onClick,
   setModal,
 }: DeleteModalProps) => {
+  useEffect(() => {
+    const preventScroll = (e: Event) => {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+
+    // 터치 이동 이벤트를 막는 함수 (모바일 환경을 위해)
+    const preventTouchMove = (e: TouchEvent) => {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', preventScroll, { passive: false })
+    window.addEventListener('wheel', preventScroll, { passive: false })
+    window.addEventListener('touchmove', preventTouchMove, { passive: false })
+
+    // 컴포넌트가 언마운트될 때 이벤트 리스너 제거
+    return () => {
+      window.removeEventListener('scroll', preventScroll)
+      window.removeEventListener('wheel', preventScroll)
+      window.removeEventListener('touchmove', preventTouchMove)
+    }
+  }, [])
   return (
     <div className="delete">
       <div className="delete__container">

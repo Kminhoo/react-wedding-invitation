@@ -1,6 +1,7 @@
 import Accordion from '@components/common/Accordion'
 import Section from '@components/common/Section'
 import Text from '@components/common/Text'
+import MotionInner from '@components/common/MotionInner'
 import { Person, Wedding } from 'models/wedding'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 
@@ -13,7 +14,7 @@ interface AccountProps {
 const Account = ({ message, groom, bride }: AccountProps) => {
   return (
     <Section className="account">
-      <div className="account__inner">
+      <MotionInner className="account__inner">
         <div className="account__title">
           <span className="account__title-main">ACCOUNT</span>
           <p className="account__title-sub">마음 전하실 곳</p>
@@ -57,7 +58,7 @@ const Account = ({ message, groom, bride }: AccountProps) => {
             </Accordion>
           </div>
         </div>
-      </div>
+      </MotionInner>
     </Section>
   )
 }

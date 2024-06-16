@@ -1,5 +1,6 @@
 import RsvpForm from '@components/RsvpForm'
 import Section from '@components/common/Section'
+import MotionInner from '@components/common/MotionInner'
 import React, { useState } from 'react'
 
 const Rsvp = () => {
@@ -7,7 +8,7 @@ const Rsvp = () => {
 
   return (
     <Section className="rsvp">
-      <div className="rsvp__inner">
+      <MotionInner className="rsvp__inner">
         <div className="rsvp__title">
           <h3>R.S.V.P</h3>
           <p>참석여부를 알려주세요.</p>
@@ -30,7 +31,7 @@ const Rsvp = () => {
           </button>
         </div>
         {response && <RsvpForm setResponse={setResponse} />}
-      </div>
+      </MotionInner>
     </Section>
   )
 }

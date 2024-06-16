@@ -1,6 +1,6 @@
 import { db } from '@firebaseApp'
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
-import React, { SetStateAction, useState } from 'react'
+import React, { SetStateAction, useEffect, useState } from 'react'
 
 const RsvpForm = ({
   setResponse,
@@ -98,6 +98,28 @@ const RsvpForm = ({
     setCount('')
     setResponse(false)
   }
+
+  useEffect(() => {
+    const preventScroll = (e: Event) => {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+
+    const preventTouchMove = (e: TouchEvent) => {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+
+    window.addEventListener('scroll', preventScroll, { passive: false })
+    window.addEventListener('wheel', preventScroll, { passive: false })
+    window.addEventListener('touchmove', preventTouchMove, { passive: false })
+
+    return () => {
+      window.removeEventListener('scroll', preventScroll)
+      window.removeEventListener('wheel', preventScroll)
+      window.removeEventListener('touchmove', preventTouchMove)
+    }
+  }, [])
 
   return (
     <div className="rsvp-form__container">

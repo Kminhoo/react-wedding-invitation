@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import Text from '@components/common/Text'
+import MotionInner from './common/MotionInner'
 import { parseISO, format } from 'date-fns'
 import { ko } from 'date-fns/locale'
 
@@ -58,7 +59,7 @@ const Footer = ({ message, date, groomName, brideName }: FooterProps) => {
 
   return (
     <footer className="footer">
-      <div className="footer__inner">
+      <MotionInner className="footer__inner">
         <div className="footer__container">
           <Text className="footer__message">{message}</Text>
         </div>
@@ -69,7 +70,7 @@ const Footer = ({ message, date, groomName, brideName }: FooterProps) => {
             <span>카카오톡으로 청첩장 공유하기</span>
           </button>
         </div>
-      </div>
+      </MotionInner>
     </footer>
   )
 }

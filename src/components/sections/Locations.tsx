@@ -1,5 +1,6 @@
 import Section from '@components/common/Section'
 import Text from '@components/common/Text'
+import MotionInner from '@components/common/MotionInner'
 import { Location } from 'models/wedding'
 import { useEffect, useRef } from 'react'
 
@@ -44,7 +45,7 @@ const Locations = ({ location }: { location: Location }) => {
 
   return (
     <Section className="location">
-      <div className="location__inner">
+      <MotionInner className="location__inner">
         <div className="location__title">
           <span className="location__title-main">LOCATION</span>
           <span className="location__title-sub">오시는 길</span>
@@ -58,7 +59,7 @@ const Locations = ({ location }: { location: Location }) => {
         <div className="location__container">
           <div ref={ref} className="location__map"></div>
         </div>
-      </div>
+      </MotionInner>
     </Section>
   )
 }

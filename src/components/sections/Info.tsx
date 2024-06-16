@@ -1,4 +1,5 @@
 import Section from '@components/common/Section'
+import MotionInner from '@components/common/MotionInner'
 
 import { parseISO, format } from 'date-fns'
 import { ko } from 'date-fns/locale'
@@ -15,7 +16,7 @@ const Info = ({ date, locationName, groomName, brideName }: InfoProps) => {
 
   return (
     <Section className="info">
-      <div className="info__inner">
+      <MotionInner className="info__inner">
         <div className="info__container">
           <div className="info__name">
             <span>{groomName}</span>
@@ -35,7 +36,7 @@ const Info = ({ date, locationName, groomName, brideName }: InfoProps) => {
             <span>{locationName}</span>
           </div>
         </div>
-      </div>
+      </MotionInner>
     </Section>
   )
 }

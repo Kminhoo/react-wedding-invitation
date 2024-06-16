@@ -1,5 +1,6 @@
 import ImageViewer from '@components/ImageViewer'
 import Section from '@components/common/Section'
+import MotionInner from '@components/common/MotionInner'
 import { useState } from 'react'
 
 const ImageGallery = ({ images }: { images: string[] }) => {
@@ -20,7 +21,7 @@ const ImageGallery = ({ images }: { images: string[] }) => {
   return (
     <>
       <Section className="gallery">
-        <div className="gallery__inner">
+        <MotionInner className="gallery__inner">
           <div className="gallery__title">
             <span className="gallery__title-main">WEDDING GALLERY</span>
             <span className="gallery__title-sub">우리의 시간</span>
@@ -53,7 +54,7 @@ const ImageGallery = ({ images }: { images: string[] }) => {
               />
             </button>
           </div>
-        </div>
+        </MotionInner>
       </Section>
       <ImageViewer
         images={images}
@@ -67,7 +68,7 @@ const ImageGallery = ({ images }: { images: string[] }) => {
 
 export default ImageGallery
 
-const BtnArrowIcon = ({ className }: { className: string }) => {
+export const BtnArrowIcon = ({ className }: { className: string }) => {
   return (
     <svg
       className={className}

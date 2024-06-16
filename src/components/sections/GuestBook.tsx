@@ -6,130 +6,8 @@ import Section from '@components/common/Section'
 import { Comment } from 'models/wedding'
 import { useEffect } from 'react'
 import DeleteModal from '@components/DeleteModal'
-
-// const GuestBook = () => {
-//   const [modal, setModal] = useState<boolean>(false)
-//   const [password, setPassword] = useState<string>('')
-//   const [selectedCommentIndex, setSelectedCommentIndex] = useState<
-//     number | null
-//   >(null)
-//   const [comments, setComments] = useState<Comment[]>([])
-//   const [error, setError] = useState()
-
-//   useEffect(() => {
-//     const docRef = doc(db, 'wedding', 'v3eNky8xXowBjARen4i5')
-
-//     const unsubscribe = onSnapshot(docRef, (querySnapshot) => {
-//       try {
-//         const newComments: Comment[] = querySnapshot?.data()?.comments
-//         setComments(newComments)
-//       } catch (e: any) {
-//         setError(e)
-//       }
-//     })
-
-//     return () => unsubscribe()
-//   }, [])
-
-//   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     const {
-//       target: { name, value },
-//     } = e
-
-//     if (name === 'inputPassword') {
-//       setPassword(value)
-//     }
-//   }
-
-//   const onDeleteClick = (index: number) => {
-//     setSelectedCommentIndex(index)
-//     setModal(true)
-//   }
-
-//   const onConfirmDelete = async () => {
-//     if (selectedCommentIndex === null) return
-
-//     const commentToDelete = comments[selectedCommentIndex]
-
-//     try {
-//       if (commentToDelete.password === password) {
-//         const docRef = doc(db, 'wedding', 'v3eNky8xXowBjARen4i5')
-//         await updateDoc(docRef, {
-//           comments: arrayRemove(commentToDelete),
-//         })
-//         alert('댓글이 삭제되었습니다.')
-
-//         setModal(false)
-//         setPassword('')
-//         setSelectedCommentIndex(null)
-//       } else {
-//         alert('비밀번호가 일치하지 않습니다.')
-//         setModal(true)
-//         setPassword('')
-//       }
-//     } catch (error) {
-//       console.error('댓글 삭제 중 오류가 발생했습니다:', error)
-//     }
-//   }
-
-//   if (comments.length === 0) {
-//     return (
-//       <div>
-//         댓글이 없습니다. 첫번째 댓글을 작성해보세요!
-//         <CommentForm />
-//       </div>
-//     )
-//   }
-
-//   if (error) {
-//     return <div>댓글을 불러올 수 없습니다.</div>
-//   }
-
-//   return (
-//     <Section className="guest__book">
-//       <div className="guest__book__inner">
-//         <div className="guest__book__title">
-//           <span className="guest__book__title-main">GEUST BOOK</span>
-//           <p className="guest__book__title-sub">방명록</p>
-//         </div>
-//         <div className="guest__book-box">
-//           {comments?.map((cmt, index) => (
-//             <div className="guest__book-comment" key={index}>
-//               <div className="guest__book-comment-box">
-//                 <div className="guest__book-comment-title">
-//                   <span className="guest__book-comment-title-name">
-//                     {cmt.name}
-//                   </span>
-//                   <span className="guest__book-comment-title-date">
-//                     {cmt.createdAt}
-//                   </span>
-//                 </div>
-//                 <DeleteComment
-//                   onClick={() => onDeleteClick(index)}
-//                   className="guest__book__icon"
-//                 />
-//               </div>
-//               <p className="guest__book-comment-content">{cmt.comment}</p>
-//             </div>
-//           ))}
-//         </div>
-//         {modal && (
-//           <DeleteModal
-//             onChange={onChange}
-//             password={password}
-//             onClick={onConfirmDelete}
-//             setModal={setModal}
-//           />
-//         )}
-//         <div className="guest__book__input-box">
-//           <CommentForm />
-//         </div>
-//       </div>
-//     </Section>
-//   )
-// }
-
-// export default GuestBook
+import MotionInner from '@components/common/MotionInner'
+import { BtnArrowIcon } from './ImageGallery'
 
 const GuestBook = () => {
   const [modal, setModal] = useState<boolean>(false)
@@ -207,7 +85,7 @@ const GuestBook = () => {
 
   return (
     <Section className="guest__book">
-      <div className="guest__book__inner">
+      <MotionInner className="guest__book__inner">
         <div className="guest__book__title">
           <span className="guest__book__title-main">GEUST BOOK</span>
           <p className="guest__book__title-sub">방명록</p>
@@ -244,7 +122,12 @@ const GuestBook = () => {
           )}
         </div>
         {comments.length > visibleComments && (
-          <button onClick={handleLoadMore}>더보기</button>
+          <div className="guest__book-comment-more">
+            <button onClick={handleLoadMore}>
+              <span>더보기</span>
+              <BtnArrowIcon className="guest__book-comment-more-btn" />
+            </button>
+          </div>
         )}
         {modal && (
           <DeleteModal
@@ -257,7 +140,7 @@ const GuestBook = () => {
         <div className="guest__book__input-box">
           <CommentForm />
         </div>
-      </div>
+      </MotionInner>
     </Section>
   )
 }
