@@ -36,34 +36,35 @@ const Bgm = () => {
         autoPlay={true}
         src="./assets/background.mp3"
       />
-      {playMusic ? <StopMusic /> : <PlayMusic />}
+      {playMusic ? (
+        <StopMusic className="bgm__icon" />
+      ) : (
+        <PlayMusic className="bgm__icon" />
+      )}
     </div>
   )
 }
 
 export default Bgm
 
-const StopMusic = () => {
+const StopMusic = ({ className }: { className: string }) => {
   return (
-    <svg className="bgm__icon" viewBox="0 0 32 32">
+    <svg className={className} viewBox="0 0 24 24">
       <title />
-      <g id="Pause">
-        <path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z" />
-        <path d="M13,11a1,1,0,0,0-1,1v8a1,1,0,0,0,2,0V12A1,1,0,0,0,13,11Z" />
-        <path d="M19,11a1,1,0,0,0-1,1v8a1,1,0,0,0,2,0V12A1,1,0,0,0,19,11Z" />
-      </g>
+      <rect fill="#464646" height="11" width="2" x="8" y="7" />
+      <rect fill="#464646" height="11" width="2" x="14" y="7" />
     </svg>
   )
 }
 
-const PlayMusic = () => {
+const PlayMusic = ({ className }: { className: string }) => {
   return (
-    <svg className="bgm__icon" viewBox="0 0 32 32">
+    <svg className={className} viewBox="0 0 24 24">
       <title />
-      <g id="Play">
-        <path d="M16,2A14,14,0,1,0,30,16,14,14,0,0,0,16,2Zm0,26A12,12,0,1,1,28,16,12,12,0,0,1,16,28Z" />
-        <path d="M22.5,15.13l-9-5.2a1,1,0,0,0-1.5.87V21.2a1,1,0,0,0,1.5.87l9-5.2a1,1,0,0,0,0-1.73ZM14,19.46V12.54L20,16Z" />
-      </g>
+      <path
+        d="M19,12a1,1,0,0,1-.55.89l-10,5A1,1,0,0,1,8,18a1,1,0,0,1-.53-.15A1,1,0,0,1,7,17V7a1,1,0,0,1,1.45-.89l10,5A1,1,0,0,1,19,12Z"
+        fill="#464646"
+      />
     </svg>
   )
 }

@@ -1,11 +1,9 @@
 .rsvp {
-    margin-top: 100px;
 
     &__inner {
-        display: flex;
+        @extend .flex-center;
+        margin-top: 150px;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         position: relative;
     }
 
@@ -14,7 +12,7 @@
         text-align: center;
 
         h3 {
-            color: pink;
+            color: $weddingTitleColor;
             font-size: 36px;
 
             @include mobile {
@@ -23,6 +21,7 @@
         }
 
         p {
+            color: $weddingSubTextColor;
             margin-top: 8px;
             font-size: 26px;
 
@@ -33,6 +32,7 @@
     }
 
     &__desc {
+        width: 100%;
         margin-top: 100px;
         font-size: 24px;
 
@@ -41,7 +41,7 @@
         }
 
         p {
-            width: 100%;
+            color: $weddingMainTextColor;
             text-align: center;
             text-wrap: wrap;
 
@@ -53,7 +53,7 @@
     }
 
     &__btn-box {
-        margin-top: 50px;
+        margin-top: 100px;
         width: 100%;
 
     }
@@ -70,15 +70,13 @@
     }
 
     &__btn {
+        @extend .flex-center;
         margin: 0 auto;
         width: 200px;
         padding: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         gap: 10px;
         cursor: pointer;
-        border: 1px solid;
+        border: 1px solid $weddingMainTextColor;
         border-radius: 10px;
 
         @include mobile {
@@ -87,6 +85,7 @@
         }
 
         span {
+            color: $weddingMainTextColor;
             font-size: 16px;
 
             @include mobile {

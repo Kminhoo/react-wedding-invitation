@@ -20,9 +20,7 @@ const Accordion = ({ label, children }: PropsWithChildren<AccordionProps>) => {
           className={`accordion__icon ${showAccordion && 'open'}`}
         />
       </div>
-      <div className={`accordion__menu ${showAccordion && 'open'}`}>
-        {children}
-      </div>
+      <div className="accordion__menu">{children}</div>
     </div>
   )
 }

@@ -99,16 +99,12 @@
         display: flex;
 
         div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @extend .flex-center;
             width: 50%;
 
             label {
+                @extend .flex-center;
                 width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 gap: 3px;
 
                 @include mobile {
@@ -258,22 +254,19 @@
     }
 
     &__submit-btn {
+        @extend .flex-center;
         margin-top: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
         button {
+            @extend .flex-center;
             width: 200px;
             height: 30px;
             font-size: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             gap: 5px;
             border: 1px solid;
             border-radius: 5px;
             padding: 5px 0;
+            cursor: pointer;
         }
     }
 

@@ -1,6 +1,6 @@
 .navigation {
   &__inner {
-    margin-top: 100px;
+    margin-top: 150px;
     margin-bottom: 50px;
     display: flex;
     flex-direction: column;
@@ -8,7 +8,6 @@
     justify-content: center;
     padding-bottom: 50px;
     padding: 0 20px;
-    background: #fff;
   }
 
   &__title {
@@ -17,6 +16,7 @@
     gap: 12px;
 
     &-main {
+      color: $weddingMainTextColor;
       font-size: 24px;
       font-weight: bold;
 
@@ -26,6 +26,7 @@
     }
 
     &-sub {
+      color: $weddingSubTextColor;
       font-weight: 16px;
 
       @include mobile {
@@ -35,13 +36,11 @@
   }
 
   &__container {
+    @extend .flex-center;
     width: 100%;
     margin: 50px auto 0;
     padding-bottom: 50px;
     border-bottom: 1px dashed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 50px;
 
     @include mobile {
@@ -49,26 +48,40 @@
     }
 
     a {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      padding: 5px;
-      border-radius: 5px;
-      color: black;
-      background: #fafbfc;
-      border: 1px solid rgba(27, 31, 35, 0.15);
+      @extend .flex-center;
+      padding: 5px 10px;
+      border-radius: 10px;
+      gap: 15px;
       font-size: 14px;
 
+
+      &:nth-child(1) {
+        color: black;
+        border: 1px solid #F7E600;
+        background: #F7E600;
+      }
+
+      &:nth-child(2) {
+        color: black;
+        background: #fff;
+        border: 1px solid #eee;
+      }
+
+      &:nth-child(3) {
+        border: 1px solid #03c75a;
+        background: #03c75a;
+        color: white;
+      }
+
       @include mobile {
-        width: 100px;
+        width: 130px;
+        gap: 5px;
       }
 
       img {
         @include mobile {
-          width: 25px;
-          height: 25px;
+          width: 20px;
+          height: 20px;
         }
       }
 

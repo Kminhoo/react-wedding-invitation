@@ -1,12 +1,9 @@
 .account {
   &__inner {
-    margin-top: 100px;
+    @extend .flex-center;
+    margin-top: 150px;
     margin-bottom: 50px;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
   }
 
   &__title {
@@ -14,7 +11,7 @@
 
     &-main {
       font-size: 36px;
-      color: pink;
+      color: $weddingTitleColor;
       font-weight: bold;
       letter-spacing: 2px;
 
@@ -24,6 +21,7 @@
     }
 
     &-sub {
+      color: $weddingSubTextColor;
       font-size: 20px;
       margin-top: 5px;
     }
@@ -34,6 +32,7 @@
   }
 
   &__message {
+    color: $weddingMainTextColor;
     text-align: center;
     line-height: 1.5;
     font-size: 24px;
@@ -44,12 +43,10 @@
   }
 
   &__accordion {
+    @extend .flex-center;
     max-width: 400px;
     margin-top: 50px;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     @include mobile {
       width: 330px;
@@ -66,6 +63,7 @@
   gap: 20px;
 
   &__title {
+    color: $weddingMainTextColor;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -78,16 +76,17 @@
   }
 
   &__menu {
-    display: flex;
+    @extend .flex-center;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+    gap: 10px;
 
     li {
       cursor: pointer;
 
       a, button {
+        color: $weddingMainTextColor;
+        background: transparent;
+
         @include mobile {
           padding: 5px;
         }

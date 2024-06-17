@@ -1,17 +1,13 @@
 .comment__form {
-  display: flex;
+  @extend .flex-center;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   gap: 20px;
 
   &-info {
-    justify-content: center;
+    @extend .flex-center;
     width: 100%;
-    display: flex;
     gap: 20px;
-    align-items: center;
   }
 
   &-name,
@@ -21,6 +17,7 @@
     align-items: center;
 
     label {
+      color: $weddingMainTextColor;
       font-size: 14px;
     }
 
@@ -45,6 +42,7 @@
   }
 
   &-area {
+    background: transparent;
     width: 400px;
     height: 50px;
     border: none;
@@ -52,6 +50,7 @@
 
     @include mobile {
       width: 100%;
+      font-size: 12px;
     }
   }
 

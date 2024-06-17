@@ -1,11 +1,9 @@
 .footer {
   &__inner {
+    @extend .flex-center;
     margin-top: 100px;
     margin-bottom: 30px;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 30px;
   }
 
@@ -14,16 +12,16 @@
     top: 80px;
     right: 100px;
     line-height: 1.2;
-    color: #3d3d30;
+    color: $weddingMainTextColor;
 
     @include mobile {
       font-size: 14px;
       left: 20px;
-      color: #251c1c;
     }
   }
 
   &__share-btn {
+    color: $weddingMainTextColor;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -55,7 +53,7 @@
       position: absolute;
       width: 100%;
       height: 50px;
-      background: linear-gradient(to top, rgba(255, 255, 255, 0), #fff);
+      background: linear-gradient(to top, rgba(255, 255, 255, 0), $backgroundWhite);
       z-index: 2;
     }
 
@@ -65,7 +63,7 @@
       bottom: 0;
       width: 100%;
       height: 50px;
-      background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0), $backgroundWhite);
       z-index: 2;
     }
   }

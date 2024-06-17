@@ -1,12 +1,9 @@
 .guest__book {
   &__inner {
-    margin-top: 100px;
+    @extend .flex-center;
+    margin-top: 150px;
     margin-bottom: 50px;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
 
     @include mobile {
       margin-top: 150px;
@@ -18,7 +15,7 @@
 
     &-main {
       font-size: 36px;
-      color: pink;
+      color: $weddingTitleColor;
       font-weight: bold;
 
       @include mobile {
@@ -27,6 +24,7 @@
     }
 
     &-sub {
+      color: $weddingSubTextColor;
       margin-top: 5px;
       font-size: 24px;
 
@@ -38,19 +36,15 @@
   }
 
   &-box {
+    @extend .flex-center;
     margin-top: 50px;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 20px;
   }
 
   &__input-box {
+    @extend .flex-center;
     margin-top: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: 1px solid rgba(27, 31, 35, 0.15);
     padding: 10px;
     border-radius: 10px;
@@ -73,6 +67,7 @@
   }
 
   &-no-comment {
+    color: $weddingMainTextColor;
     font-size: 26px;
 
     @include mobile {
@@ -85,7 +80,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: #fafbfc;
+    background: $backgroundWhite;
     padding: 10px;
     border-radius: 10px;
     border: 1px solid rgba(27, 31, 35, 0.15);
@@ -100,6 +95,7 @@
       align-items: center;
 
       &-name {
+        color: $weddingMainTextColor;
         font-size: 20px;
 
         @include mobile {
@@ -108,8 +104,8 @@
       }
 
       &-date {
+        color: $weddingSubTextColor;
         font-size: 14px;
-        color: gray;
 
         @include mobile {
           font-size: 12px;
@@ -118,6 +114,7 @@
     }
 
     &-content {
+      color: $weddingMainTextColor;
       padding: 20px;
       font-size: 16px;
 
@@ -137,9 +134,8 @@
     margin-top: 20px;
 
     button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @extend .flex-center;
+      background: transparent;
       gap: 5px;
       cursor: pointer;
     }

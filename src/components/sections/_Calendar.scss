@@ -1,20 +1,17 @@
 .calendar {
   &__inner {
-    display: flex;
+    @extend .flex-center;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin-top: 150px;
   }
 
   &__date {
-    display: flex;
+    @extend .flex-center;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 
   &__day {
+    color: $weddingMainTextColor;
     font-size: 30px;
     line-height: 1.5;
 
@@ -24,6 +21,7 @@
   }
 
   &__item {
+    color: $weddingSubTextColor;
     font-size: 20px;
     margin-top: 5px;
 
@@ -42,13 +40,11 @@
   }
 
   &__D-day {
+    @extend .flex-center;
     margin-top: 30px;
     font-size: 24px;
-    display: flex;
     gap: 5px;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     @include mobile {
       margin-top: 50px;
@@ -62,7 +58,7 @@
     }
 
     &-day_selected {
-      background-color: orange;
+      background-color: $weddingTitleColor;
     }
 
     &-cell {

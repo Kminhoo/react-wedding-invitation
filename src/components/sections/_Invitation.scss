@@ -1,24 +1,19 @@
 .invitation {
     &__inner {
+        @extend .flex-center;
         margin-top: 100px;
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         gap: 10px;
-        background-color: #fff;
     }
 
     &__title {
-        display: flex;
+        @extend .flex-center;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
 
         &-main {
+            color: $weddingTitleColor;
             font-size: 36px;
             font-weight: bold;
-            color: #FF7979;
             letter-spacing: 5px;
             line-height: 1.2;
 
@@ -28,6 +23,7 @@
         }
 
         &-sub {
+            color: $weddingMainTextColor;
             font-size: 30px;
 
             @include mobile {
@@ -37,6 +33,7 @@
     }
 
     &__intro {
+        color: $weddingSubTextColor;
         font-size: 24px;
         text-align: center;
         margin-top: 50px;
@@ -62,6 +59,7 @@
     }
 
     &__message {
+        color: $weddingMainTextColor;
         margin-top: 60px;
         text-align: center;
         line-height: 1.5;

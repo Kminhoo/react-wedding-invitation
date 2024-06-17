@@ -1,12 +1,14 @@
 .bgm {
   position: absolute;
   top: 20px;
-  left: 40px;
+  right: 40px;
   z-index: 10;
-  // transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
   @include mobile {
-    top: 10px;
-    left: 10px;
+    padding: 10px;
+    top: 5px;
+    right: 5px;
   }
 
   &__icon {

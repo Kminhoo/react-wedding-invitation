@@ -1,5 +1,4 @@
 .info {
-  background-color: #fff;
 
   &__inner {
     padding-top: 100px;
@@ -7,10 +6,8 @@
   }
 
   &__container {
-    display: flex;
+    @extend .flex-center;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 5px;
   }
 
@@ -21,6 +18,7 @@
     gap: 15px;
 
     span {
+      color: $weddingMainTextColor;
       font-size: 30px;
       letter-spacing: 2px;
 
@@ -48,6 +46,7 @@
     line-height: 1.2;
 
     span {
+      color: $weddingMainTextColor;
       font-size: 32px;
 
       @include mobile {
@@ -62,6 +61,7 @@
     margin-top: 8px;
 
     span {
+      color: $weddingSubTextColor;
       font-size: 28px;
 
       @include mobile {

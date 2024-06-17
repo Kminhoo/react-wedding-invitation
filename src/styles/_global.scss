@@ -14,7 +14,6 @@ body {
   font-family: 'MaruBuriSemiBold';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $bodyColor;
 }
 
 code {
@@ -22,18 +21,16 @@ code {
     monospace;
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #root {
   width: 100%;
   height: 100%;
+  background-color: $backgroundBody;
 }
 
-// .pages {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   background-color: rgb(145, 137, 123);
-//   opacity: 0.1;
-//   transition: 1s all ease-in-out;
-// }
+

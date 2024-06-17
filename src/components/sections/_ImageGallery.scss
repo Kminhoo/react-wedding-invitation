@@ -2,7 +2,6 @@
   &__inner {
     margin-top: 100px;
     position: relative;
-    background: #fff;
 
     @include mobile {
       margin-top: 150px;
@@ -10,16 +9,13 @@
   }
 
   &__title {
-    text-align: center;
+    @extend .flex-center;
     margin-bottom: 50px;
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     &-main {
       font-size: 36px;
-      color: #ff7979;
+      color: $weddingTitleColor;
       font-weight: bold;
       letter-spacing: 2px;
 
@@ -29,6 +25,7 @@
     }
 
     &-sub {
+      color: $weddingSubTextColor;
       font-size: 30px;
 
       @include mobile {
@@ -98,7 +95,7 @@
     border: none;
     outline: none;
     position: relative;
-    background: #fff;
+    background: $backgroundWhite;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,11 +132,11 @@
       bottom: 100%;
       background: linear-gradient(
         0deg,
-        rgba(250, 250, 250, 1) 0%,
-        rgba(250, 250, 250, 0.55) 60%,
-        rgba(250, 250, 250, 0.5) 73%,
-        rgba(250, 250, 250, 0.25) 83%,
-        rgba(250, 250, 250, 0) 100%
+        rgba(250, 251, 252, 1) 0%,
+        rgba(250, 251, 252, 0.85) 25%,
+        rgba(250, 251, 252, 0.55) 50%,
+        rgba(250, 251, 252, 0.25) 75%,
+        rgba(250, 251, 252, 0) 100%
       );
     }
   }

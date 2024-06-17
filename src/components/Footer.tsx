@@ -36,10 +36,9 @@ const Footer = ({ message, date, groomName, brideName }: FooterProps) => {
     window.Kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
-        title: `${groomName + brideName}결혼합니다.`,
+        title: `${groomName + '♥️' + brideName} 결혼합니다.`,
         description: `${format(parseISO(date), 'M월 d일 eeee h시', { locale: ko })}`,
-        imageUrl:
-          'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+        imageUrl: '../public/assets/images/wedding_00.jpeg',
         link: {
           mobileWebUrl: window.location.origin,
           webUrl: window.location.origin,
