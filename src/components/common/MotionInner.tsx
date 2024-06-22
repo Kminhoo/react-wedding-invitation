@@ -14,7 +14,6 @@ const MotionInner = ({ className, children }: MotionInnerProps) => {
         y: 0,
         transition: { delay: 0.5 },
       }}
-      //   viewport={{ once: true }}
       className={className}
     >
       {children}

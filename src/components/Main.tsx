@@ -32,7 +32,17 @@ const Main = ({ wedding }: { wedding: Wedding }) => {
         groomName={groom.name}
         brideName={bride.name}
       />
-      <Invitation message={message} />
+      <Invitation
+        message={message}
+        groomName={groom.name}
+        brideName={bride.name}
+        groomeTel={groom.phoneNumber}
+        brideTel={bride.phoneNumber}
+        groomFatherName={groom.parents[0].name}
+        groomMotherName={groom.parents[1].name}
+        brideFatherName={bride.parents[0].name}
+        brideMotherName={bride.parents[1].name}
+      />
       <ImageGallery images={galleryImages} />
       <Calendar date={date} />
       <Locations location={location} />

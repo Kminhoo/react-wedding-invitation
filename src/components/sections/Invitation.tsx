@@ -4,8 +4,31 @@ import MotionInner from '@components/common/MotionInner'
 import Text from '@components/common/Text'
 
 import { Message } from 'models/wedding'
+import InvitationPerson from '@components/InvitationPerson'
 
-const Invitation = ({ message }: { message: Message }) => {
+interface InvitationProps {
+  message: Message
+  groomName: string
+  brideName: string
+  groomeTel: string
+  brideTel: string
+  groomFatherName: string
+  groomMotherName: string
+  brideFatherName: string
+  brideMotherName: string
+}
+
+const Invitation = ({
+  message,
+  groomName,
+  brideName,
+  groomeTel,
+  brideTel,
+  groomFatherName,
+  groomMotherName,
+  brideFatherName,
+  brideMotherName,
+}: InvitationProps) => {
   console.log(message.intro)
   return (
     <Section className="invitation">
@@ -21,6 +44,20 @@ const Invitation = ({ message }: { message: Message }) => {
           <img src="./assets/file.jpg" alt="wedding message" />
         </div>
         <Text className="invitation__message">{message.invitation}</Text>
+        <div className="invitation__person-box">
+          <InvitationPerson
+            name={groomName}
+            tel={groomeTel}
+            father={groomFatherName}
+            mother={groomMotherName}
+          />
+          <InvitationPerson
+            name={brideName}
+            tel={brideTel}
+            father={brideFatherName}
+            mother={brideMotherName}
+          />
+        </div>
       </MotionInner>
     </Section>
   )
