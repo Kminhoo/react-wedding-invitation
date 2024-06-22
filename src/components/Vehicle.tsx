@@ -34,7 +34,7 @@ const Train = ({ className }: { className: string }) => {
   return (
     <svg
       className={className}
-      enable-background="new 0 0 141.732 141.732"
+      enableBackground="new 0 0 141.732 141.732"
       height="141.732px"
       id="Livello_1"
       version="1.1"

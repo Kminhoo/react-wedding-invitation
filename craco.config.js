@@ -7,6 +7,7 @@ module.exports = {
       '@components': path.resolve(__dirname, './src/components'),
       '@sections': path.resolve(__dirname, './src/components/sections'),
       '@firebaseApp': path.resolve(__dirname, './src/firebaseApp'),
+      '@mapleAssets': path.resolve(__dirname, './src/mapleAssets'),
     },
   },
 }
