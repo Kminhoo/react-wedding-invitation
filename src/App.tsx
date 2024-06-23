@@ -23,6 +23,8 @@ const App = () => {
 
   const [visibleApp, setVisibleApp] = useState(false)
 
+  const [count, setCount] = useState(0)
+
   const getWeddingData = async () => {
     try {
       setLoading(true)
@@ -64,6 +66,12 @@ const App = () => {
 
   return (
     <div className="App">
+      {/* <button
+        style={{ position: 'absolute', top: 0 }}
+        onClick={() => setCount((prev) => prev + 1)}
+      >
+        +{count}
+      </button> */}
       <Maple />
       <Bgm />
       <Header date={date} groomName={groom.name} brideName={bride.name} />

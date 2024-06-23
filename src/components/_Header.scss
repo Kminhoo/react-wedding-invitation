@@ -3,7 +3,8 @@
 
   &__inner {
     @extend .flex-center;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 20px;
     padding: 100px 20px 50px;
 
@@ -49,6 +50,7 @@
   }
 
   &__name-title {
+    width: 100%;
     color: $weddingNameColor;
     font-size: 20px;
     font-weight: bold;

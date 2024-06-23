@@ -30,12 +30,7 @@ const Bgm = () => {
 
   return (
     <div className="bgm" onClick={playMusic ? stopBgm : playBgm}>
-      <audio
-        ref={ref}
-        loop={true}
-        autoPlay={true}
-        src="./assets/background.mp3"
-      />
+      <audio ref={ref} loop={true} autoPlay={true} src="./assets/bgm.mp3" />
       {playMusic ? (
         <StopMusic className="bgm__icon" />
       ) : (

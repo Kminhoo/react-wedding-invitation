@@ -1,14 +1,18 @@
 .invitationPerson {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
 
-    &__children {
-        color: $weddingNameColor;
-    }
+  @include mobile {
+    font-size: 16px;
+  }
 
-    &__call {
-        color: $weddingMainTextColor;
-    }
+  &__children {
+    color: $weddingNameColor;
+  }
+
+  &__call {
+    color: $weddingMainTextColor;
+  }
 }
