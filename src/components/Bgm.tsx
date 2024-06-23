@@ -22,15 +22,24 @@ const Bgm = () => {
         setPlayMusic(true)
 
         window.removeEventListener('scroll', handleScroll)
+        window.removeEventListener('touchstart', handleScroll)
+        window.removeEventListener('click', handleScroll)
       }
     }
 
     window.addEventListener('scroll', handleScroll)
+    window.addEventListener('touchstart', handleScroll)
+    window.addEventListener('click', handleScroll)
   }, [])
 
   return (
     <div className="bgm" onClick={playMusic ? stopBgm : playBgm}>
-      <audio ref={ref} loop={true} autoPlay={true} src="./assets/bgm.mp3" />
+      <audio
+        ref={ref}
+        loop={true}
+        autoPlay={playMusic ? true : false}
+        src="./assets/bgm.mp3"
+      />
       {playMusic ? (
         <StopMusic className="bgm__icon" />
       ) : (
