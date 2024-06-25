@@ -17,7 +17,7 @@ const Navigation = ({ link }: { link: string[] }) => {
             <span>카카오 맵</span>
           </a>
 
-          <a href="https://apis.openapi.sk.com/tmap/app/routes?appKey=l7xx7179ddde21ca4bfb8e6b03c710138f41&name=+노블레스 웨딩컨베션+&lon=+127.0303329958705+&lat=+37.28163212324522">
+          <a href={link[2]}>
             <img src="./assets/tmap.png" alt="tmap" />
             <span>T Map</span>
           </a>

@@ -30,6 +30,7 @@ const Footer = ({ message, date, groomName, brideName }: FooterProps) => {
         window.Kakao.init(process.env.REACT_APP_KAKAO_API_KEY)
       }
     }
+    console.log(window.location.origin, 'window location origin')
   }, [])
 
   const handleShareKakao = () => {

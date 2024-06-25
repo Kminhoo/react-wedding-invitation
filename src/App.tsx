@@ -8,36 +8,12 @@ import Maple from '@components/common/Maple'
 import StateMessage from '@components/common/StateMessage'
 import FullScreenMessage from '@components/common/FullScreenMessage'
 
-import { doc, getDoc } from 'firebase/firestore'
-
-import { db } from '@firebaseApp'
-
-import { Wedding } from 'models/wedding'
+import useAppState from './hooks/useAppState'
 
 const App = () => {
-  const [loading, setLoading] = useState<Boolean>(false)
-
-  const [error, setError] = useState()
-
-  const [wedding, setWedding] = useState<Wedding | null>()
+  const { loading, error, wedding, getWeddingData } = useAppState()
 
   const [visibleApp, setVisibleApp] = useState(false)
-
-  const [count, setCount] = useState(0)
-
-  const getWeddingData = async () => {
-    try {
-      setLoading(true)
-
-      const docRef = doc(db, 'wedding', 'v3eNky8xXowBjARen4i5')
-      const docSnap = await getDoc(docRef)
-
-      setWedding(docSnap.data() as Wedding)
-      setLoading(false)
-    } catch (error: any) {
-      setError(error)
-    }
-  }
 
   useEffect(() => {
     setVisibleApp(true)
@@ -66,12 +42,6 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* <button
-        style={{ position: 'absolute', top: 0 }}
-        onClick={() => setCount((prev) => prev + 1)}
-      >
-        +{count}
-      </button> */}
       <Maple />
       <Bgm />
       <Header date={date} groomName={groom.name} brideName={bride.name} />
