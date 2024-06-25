@@ -10,7 +10,7 @@ interface HeaderProps {
 const DAYS = [
   'Sunday',
   'Monday',
-  'Tuseday',
+  'Tuesday',
   'Wednesday',
   'Thursday',
   'Friday',
@@ -19,15 +19,16 @@ const DAYS = [
 
 const Header = ({ date, groomName, brideName }: HeaderProps) => {
   const weddingDate = parseISO(date)
+  const daysIdx = getDay(weddingDate)
+  const weddingDay = DAYS[daysIdx]
+  const formattedDate = format(weddingDate, 'yy. MM. dd')
 
   return (
     <header className="header">
       <MotionInner className="header__inner">
         <div className="header__date-box">
-          <span className="header__date">
-            {format(weddingDate, 'yy. MM. dd')}
-          </span>
-          <span className="header__day">{DAYS[getDay(weddingDate)]}</span>
+          <span className="header__date">{formattedDate}</span>
+          <span className="header__day">{weddingDay}</span>
         </div>
 
         <div className="header__name-box">

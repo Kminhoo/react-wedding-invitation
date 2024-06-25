@@ -5,12 +5,7 @@
     @extend .flex-center;
     flex-direction: row;
     justify-content: space-between;
-    gap: 20px;
     padding: 100px 20px 50px;
-
-    @include mobile {
-      gap: 35px;
-    }
   }
 
   &__date-box,
@@ -24,6 +19,10 @@
     color: $weddingMainTextColor;
     font-size: 50px;
 
+    @include tablet {
+      font-size: 40px;
+    }
+
     @include mobile {
       font-size: 30px;
     }
@@ -32,6 +31,10 @@
   &__day {
     color: $weddingSubTextColor;
     font-size: 36px;
+
+    @include tablet {
+      font-size: 30px;
+    }
 
     @include mobile {
       font-size: 26px;
@@ -43,6 +46,10 @@
     color: $weddingMainTextColor;
     font-size: 55px;
     letter-spacing: 10px;
+
+    @include tablet {
+      font-size: 40px;
+    }
 
     @include mobile {
       font-size: 28px;
@@ -56,6 +63,10 @@
     font-weight: bold;
     letter-spacing: 5px;
 
+    @include tablet {
+      font-size: 16px;
+    }
+
     @include mobile {
       font-size: 14px;
     }
@@ -63,10 +74,5 @@
 
   .bride {
     margin-top: 30px;
-  }
-
-  &__icon {
-    width: 35px;
-    transform: rotate(30deg);
   }
 }

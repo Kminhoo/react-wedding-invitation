@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
-import Text from '@components/common/Text'
-import MotionInner from './common/MotionInner'
+
 import { parseISO, format } from 'date-fns'
 import { ko } from 'date-fns/locale'
+
+import Text from '@components/common/Text'
+import MotionInner from '@components/common/MotionInner'
 
 declare global {
   interface Window {
@@ -30,7 +32,6 @@ const Footer = ({ message, date, groomName, brideName }: FooterProps) => {
         window.Kakao.init(process.env.REACT_APP_KAKAO_API_KEY)
       }
     }
-    console.log(window.location.origin, 'window location origin')
   }, [])
 
   const handleShareKakao = () => {
@@ -38,8 +39,9 @@ const Footer = ({ message, date, groomName, brideName }: FooterProps) => {
       objectType: 'feed',
       content: {
         title: `${groomName + '♥️' + brideName} 결혼합니다.`,
-        description: `${format(parseISO(date), 'M월 d일 eeee h시', { locale: ko })}`,
-        imageUrl: '../public/assets/images/wedding_00.jpeg',
+        description: `${format(parseISO(date), 'M월 d일 eeee h시', { locale: ko })} 마리더스타`,
+        imageUrl:
+          'https://res.cloudinary.com/dgl08y6j1/image/upload/v1719311724/webp/brc7qtmzeene1ayvzvfo.png',
         link: {
           mobileWebUrl: window.location.origin,
           webUrl: window.location.origin,

@@ -8,10 +8,13 @@
   box-sizing: content-box;
   background-color: $backgroundWhite;
 
+  @include tablet {
+    max-width: 700px;
+  }
+
   @include mobile {
     margin: 0;
     max-width: 600px;
     padding: 0;
   }
 }
-
