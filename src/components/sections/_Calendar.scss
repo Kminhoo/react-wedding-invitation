@@ -1,8 +1,7 @@
 .calendar {
   &__inner {
-    @extend .flex-center;
+    @extend .flex-center, .inner-margin;
     flex-direction: column;
-    margin-top: 150px;
   }
 
   &__date {
@@ -12,21 +11,29 @@
 
   &__day {
     color: $weddingMainTextColor;
-    font-size: 30px;
+    font-size: 36px;
     line-height: 1.5;
+
+    @include tablet {
+      font-size: 30px;
+    }
 
     @include mobile {
       font-size: 28px;
     }
   }
 
-  &__item {
+  &__time {
     color: $weddingSubTextColor;
-    font-size: 20px;
+    font-size: 30px;
     margin-top: 5px;
 
+    @include tablet {
+      font-size: 26px;
+    }
+
     @include mobile {
-      font-size: 18px;
+      font-size: 20px;
     }
   }
 
@@ -59,6 +66,10 @@
 
     &-day_selected {
       background-color: $weddingTitleColor;
+
+      &:hover {
+        background-color: $weddingTitleColor;
+      }
     }
 
     &-cell {
@@ -72,12 +83,11 @@
 
     .rdp-table {
       tr > :first-child {
-        color: red; /* 배경색을 예로 들었습니다 */
+        color: red;
       }
 
-      /* 마지막 자식 요소에 스타일 적용 */
       tr > :last-child {
-        color: red; /* 배경색을 예로 들었습니다 */
+        color: red;
       }
     }
   }

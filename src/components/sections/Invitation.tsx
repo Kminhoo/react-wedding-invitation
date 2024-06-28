@@ -35,7 +35,7 @@ const Invitation = ({
         <div className="invitation__title">
           <span className="invitation__title-main">INVITATION</span>
           <span className="invitation__title-sub">
-            경호. 해영 결혼식에 초대합니다.
+            경호.해영 결혼식에 초대합니다.
           </span>
         </div>
         <Text className="invitation__intro">{message.intro}</Text>

@@ -1,7 +1,9 @@
+import { useState } from 'react'
+
 import ImageViewer from '@components/ImageViewer'
+
 import Section from '@components/common/Section'
 import MotionInner from '@components/common/MotionInner'
-import { useState } from 'react'
 
 const ImageGallery = ({ images }: { images: string[] }) => {
   const [selectedIndex, setSelectedIndex] = useState(-1)
@@ -23,8 +25,8 @@ const ImageGallery = ({ images }: { images: string[] }) => {
       <Section className="gallery">
         <MotionInner className="gallery__inner">
           <div className="gallery__title">
-            <span className="gallery__title-main">WEDDING GALLERY</span>
-            <span className="gallery__title-sub">우리의 시간</span>
+            <span className="gallery__title-main">GALLERY</span>
+            <span className="gallery__title-sub">우리의 시작</span>
           </div>
           <div className={`gallery__container ${isMore && 'show'}`}>
             <ul className={`gallery__album ${isMore && 'show'}`}>
@@ -32,9 +34,7 @@ const ImageGallery = ({ images }: { images: string[] }) => {
                 <li
                   key={index}
                   className="gallery__item"
-                  onClick={() => {
-                    handleSelectedImage(index)
-                  }}
+                  onClick={() => handleSelectedImage(index)}
                 >
                   <img alt="wedding" src={`./assets/images/${img}.jpeg`} />
                 </li>

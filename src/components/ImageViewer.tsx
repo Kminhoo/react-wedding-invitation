@@ -35,7 +35,11 @@ const ImageViewer = ({
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
-            <img src={`./assets/images/${img}.jpeg`} alt="wedding" />
+            <img
+              className="viewer__img"
+              src={`./assets/images/${img}.jpeg`}
+              alt="wedding"
+            />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+
 import {
   parseISO,
   differenceInDays,
@@ -67,9 +68,7 @@ const Timer = ({ date }: { date: string }) => {
       </div>
       <p className="timer__message">
         경호와 해영이의 결혼식 까지{' '}
-        <span className="timer__day">
-          {differenceInDays(weddingDate, today)}
-        </span>
+        <span className="timer__day">{daysLeft}</span>
         &nbsp;일 남았습니다.
       </p>
     </>

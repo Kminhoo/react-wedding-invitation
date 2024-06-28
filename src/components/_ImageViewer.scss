@@ -1,19 +1,23 @@
 .viewer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: black;
-    z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 5;
 
-    &__close {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        width: 20px;
-        height: 20px;
-        z-index: 10;
-        fill: white;
-    }
+  &__close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+    fill: white;
+  }
+
+  &__img {
+    object-fit: contain;
+  }
 }

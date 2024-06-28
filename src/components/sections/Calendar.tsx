@@ -1,11 +1,15 @@
-import Timer from '@components/Timer'
-import Section from '@components/common/Section'
-import MotionInner from '@components/common/MotionInner'
+import { memo } from 'react'
+
+import { DayPicker } from 'react-day-picker'
 
 import { parseISO, format } from 'date-fns'
 import { ko } from 'date-fns/locale'
 
-import { DayPicker } from 'react-day-picker'
+import Timer from '@components/Timer'
+import Section from '@components/common/Section'
+
+import MotionInner from '@components/common/MotionInner'
+
 import 'react-day-picker/dist/style.css'
 
 const Calendar = ({ date }: { date: string }) => {
@@ -18,7 +22,7 @@ const Calendar = ({ date }: { date: string }) => {
           <span className="calendar__day">
             {format(weddingDate, 'yyyy.MM.dd')}
           </span>
-          <span className="calendar__item">
+          <span className="calendar__time">
             {format(weddingDate, 'aaa h시 eeee', { locale: ko })}
           </span>
         </div>
@@ -39,4 +43,4 @@ const Calendar = ({ date }: { date: string }) => {
   )
 }
 
-export default Calendar
+export default memo(Calendar)
