@@ -14,6 +14,10 @@
     line-height: 1.2;
     color: $weddingMainTextColor;
 
+    @include tablet {
+      right: 20px;
+    }
+
     @include mobile {
       font-size: 14px;
       left: 20px;
@@ -33,6 +37,11 @@
   }
 
   &__share-icon {
+    @include tablet {
+      width: 30px;
+      height: 30px;
+    }
+
     @include mobile {
       width: 20px;
       height: 20px;
@@ -82,12 +91,28 @@
     align-items: center;
     gap: 5px;
     cursor: pointer;
+
+    span {
+      @include mobile {
+        font-size: 12px;
+      }
+    }
   }
 
   &__move-btn {
     width: 35px;
     height: 35px;
     animation: motion 0.5s linear 0s infinite alternate;
+
+    @include tablet {
+      width: 30px;
+      height: 30px;
+    }
+
+    @include mobile {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 
