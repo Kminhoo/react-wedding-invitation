@@ -8,7 +8,7 @@ import Maple from '@components/common/Maple'
 import StateMessage from '@components/common/StateMessage'
 import FullScreenMessage from '@components/common/FullScreenMessage'
 
-import useAppState from './hooks/useAppState'
+import useAppState from '@hooks/useAppState'
 
 const App = () => {
   const { loading, error, wedding, getWeddingData } = useAppState()

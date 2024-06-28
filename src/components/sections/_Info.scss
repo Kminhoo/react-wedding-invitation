@@ -1,8 +1,6 @@
 .info {
-
   &__inner {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    @extend .inner-margin;
   }
 
   &__container {
@@ -22,6 +20,10 @@
       font-size: 30px;
       letter-spacing: 2px;
 
+      @include tablet {
+        font-size: 26px;
+      }
+
       @include mobile {
         font-size: 22px;
       }
@@ -29,10 +31,15 @@
   }
 
   &__icon {
-    fill: #FF7979;
+    fill: #ff7979;
     width: 50px;
     height: 50px;
     animation: heartbeat 1.4s linear infinite;
+
+    @include tablet {
+      width: 40px;
+      height: 40px;
+    }
 
     @include mobile {
       width: 35px;
@@ -40,14 +47,16 @@
     }
   }
 
-
   &__date {
-    font-size: 24px;
     line-height: 1.2;
 
     span {
       color: $weddingMainTextColor;
       font-size: 32px;
+
+      @include tablet {
+        font-size: 28px;
+      }
 
       @include mobile {
         font-size: 20px;
@@ -56,13 +65,16 @@
   }
 
   &__location {
-    font-size: 18px;
     line-height: 1.2;
     margin-top: 8px;
 
     span {
       color: $weddingSubTextColor;
       font-size: 28px;
+
+      @include tablet {
+        font-size: 24px;
+      }
 
       @include mobile {
         font-size: 16px;
@@ -72,10 +84,22 @@
 }
 
 @keyframes heartbeat {
-  0% { transform: scale(1); }
-  25% { transform: scale(1); }
-  30% { transform: scale(1.4); }
-  50% { transform: scale(1.2); }
-  70% { transform: scale(1.4); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.4);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

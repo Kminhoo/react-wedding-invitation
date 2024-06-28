@@ -1,8 +1,8 @@
-import Section from '@components/common/Section'
-import MotionInner from '@components/common/MotionInner'
-
 import { parseISO, format } from 'date-fns'
 import { ko } from 'date-fns/locale'
+
+import Section from '@components/common/Section'
+import MotionInner from '@components/common/MotionInner'
 
 interface InfoProps {
   date: string

@@ -11,12 +11,12 @@ const InvitationPerson = ({
   mother,
   tel,
 }: InvitationPersonProps) => {
+  const relationship = name[0] === '국' ? '장남' : '장녀'
+
   return (
     <div className="invitationPerson">
       <span className="invitationPerson__parent">{`${father}.${mother}의`}</span>
-      <span className="invitationPerson__children">
-        {name[0] === '국' ? '장남' : '장녀'}
-      </span>
+      <span className="invitationPerson__children">{relationship}</span>
       <span className="invitationPerson__name">{name}</span>
       <a className="invitationPerson__call" href={`tel:${tel}`}>
         <Call />

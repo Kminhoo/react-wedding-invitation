@@ -8,6 +8,7 @@ module.exports = {
       '@sections': path.resolve(__dirname, './src/components/sections'),
       '@firebaseApp': path.resolve(__dirname, './src/firebaseApp'),
       '@mapleAssets': path.resolve(__dirname, './src/mapleAssets'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
     },
   },
 }

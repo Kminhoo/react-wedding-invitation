@@ -1,16 +1,16 @@
 import Section from '@components/common/Section'
 import MotionInner from '@components/common/MotionInner'
-
 import Text from '@components/common/Text'
 
-import { Message } from 'models/wedding'
 import InvitationPerson from '@components/InvitationPerson'
+
+import { Message } from 'models/wedding'
 
 interface InvitationProps {
   message: Message
   groomName: string
   brideName: string
-  groomeTel: string
+  groomTel: string
   brideTel: string
   groomFatherName: string
   groomMotherName: string
@@ -22,14 +22,13 @@ const Invitation = ({
   message,
   groomName,
   brideName,
-  groomeTel,
+  groomTel,
   brideTel,
   groomFatherName,
   groomMotherName,
   brideFatherName,
   brideMotherName,
 }: InvitationProps) => {
-  console.log(message.intro)
   return (
     <Section className="invitation">
       <MotionInner className="invitation__inner">
@@ -47,7 +46,7 @@ const Invitation = ({
         <div className="invitation__person-box">
           <InvitationPerson
             name={groomName}
-            tel={groomeTel}
+            tel={groomTel}
             father={groomFatherName}
             mother={groomMotherName}
           />

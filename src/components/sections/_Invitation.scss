@@ -1,81 +1,95 @@
 .invitation {
-    &__inner {
-        @extend .flex-center;
-        margin-top: 100px;
-        flex-direction: column;
-        gap: 10px;
-    }
+  &__inner {
+    @extend .flex-center, .inner-margin;
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    &__title {
-        @extend .flex-center;
-        flex-direction: column;
+  &__title {
+    @extend .flex-center;
+    flex-direction: column;
 
-        &-main {
-            color: $weddingTitleColor;
-            font-size: 36px;
-            font-weight: bold;
-            letter-spacing: 5px;
-            line-height: 1.2;
+    &-main {
+      color: $weddingTitleColor;
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 5px;
+      line-height: 1.2;
 
-            @include mobile {
-                font-size: 28px;
-            }
-        }
+      @include tablet {
+        font-size: 28px;
+      }
 
-        &-sub {
-            color: $weddingSubTextColor;
-            font-size: 30px;
-
-            @include mobile {
-                font-size: 20px;
-            }
-        }
-    }
-
-    &__intro {
-        color: $weddingMainTextColor;
+      @include mobile {
         font-size: 24px;
-        text-align: center;
-        margin-top: 50px;
-
-        @include mobile {
-            font-size: 16px;
-        }
+      }
     }
 
-    &__message-img {
-        margin-top: 60px;
-        max-width: 540px;
+    &-sub {
+      color: $weddingSubTextColor;
+      font-size: 30px;
 
-        @include mobile {
-            padding: 0 20px;
-        }
-
-        img {
-            width: 100%;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-    }
-
-    &__message {
-        color: $weddingMainTextColor;
-        margin-top: 60px;
-        text-align: center;
-        line-height: 1.5;
+      @include tablet {
         font-size: 24px;
+      }
 
-        @include mobile {
-            font-size: 16px;
-        }
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__intro {
+    color: $weddingMainTextColor;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 50px;
+
+    @include tablet {
+      font-size: 20px;
     }
 
-    &__person-box {
-        margin-top: 100px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
+    @include mobile {
+      font-size: 16px;
     }
+  }
+
+  &__message-img {
+    margin-top: 60px;
+    max-width: 540px;
+
+    @include mobile {
+      padding: 0 20px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+  }
+
+  &__message {
+    color: $weddingMainTextColor;
+    margin-top: 60px;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 24px;
+
+    @include tablet {
+      font-size: 20px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__person-box {
+    @extend .flex-center;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 100%;
+    gap: 30px;
+  }
 }

@@ -36,7 +36,7 @@ const Main = ({ wedding }: { wedding: Wedding }) => {
         message={message}
         groomName={groom.name}
         brideName={bride.name}
-        groomeTel={groom.phoneNumber}
+        groomTel={groom.phoneNumber}
         brideTel={bride.phoneNumber}
         groomFatherName={groom.parents[0].name}
         groomMotherName={groom.parents[1].name}

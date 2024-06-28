@@ -1,5 +1,6 @@
 import { parseISO, format, getDay } from 'date-fns'
-import MotionInner from './common/MotionInner'
+
+import MotionInner from '@components/common/MotionInner'
 
 interface HeaderProps {
   date: string

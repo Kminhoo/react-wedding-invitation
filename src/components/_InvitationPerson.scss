@@ -1,8 +1,11 @@
 .invitationPerson {
-  display: flex;
-  align-items: center;
+  @extend .flex-center;
   gap: 10px;
   font-size: 24px;
+
+  @include tablet {
+    font-size: 20px;
+  }
 
   @include mobile {
     font-size: 16px;
