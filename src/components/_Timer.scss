@@ -10,6 +10,12 @@
     align-items: center;
     gap: 3px;
 
+    &:nth-child(odd) {
+      background: #f5eaec;
+      padding: 5px;
+      border-radius: 10px;
+    }
+
     @include mobile {
       font-size: 18px;
     }

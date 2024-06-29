@@ -1,33 +1,33 @@
-import { useEffect } from 'react'
-
-import mapleRedLeaf from '@mapleAssets/mapleRedLeaf.png'
-import mapleYellowLeaf from '@mapleAssets/mapleYellowLeaf.png'
+import { useEffect, useCallback } from 'react'
 
 const Maple = () => {
-  useEffect(() => {
-    const newMapleGenerate = () => {
-      const mapleContainer = document.querySelector('.maple-container')
-      const mapleBox = document.createElement('div')
+  const createMaple = useCallback(() => {
+    const mapleContainer = document.querySelector('.maple-container')
+    const mapleBox = document.createElement('div')
 
-      const mapleImages = [mapleRedLeaf, mapleYellowLeaf]
-      const randomIndex = Math.floor(Math.random() * mapleImages.length)
-      mapleBox.style.backgroundImage = `url(${mapleImages[randomIndex]})`
+    const size = Math.random() * 20 + 10
+    const duration = Math.random() * 8 + 6
 
-      mapleBox.classList.add('maple')
-      mapleBox.style.left = Math.random() * window.innerWidth + 'px'
-      mapleBox.style.opacity = `${Math.random()}`
+    mapleBox.classList.add('maple')
+    mapleBox.style.left = `${Math.random() * 100}%`
+    mapleBox.style.width = `${size}px`
+    mapleBox.style.height = `${size}px`
+    mapleBox.style.opacity = `${Math.random() * 0.6 + 0.4}`
+    mapleBox.style.animationDuration = `${duration}s`
 
-      mapleContainer?.appendChild(mapleBox)
+    mapleBox.style.animationName = Math.random() > 0.5 ? 'fall1' : 'fall2'
 
-      setTimeout(() => {
-        mapleBox.remove()
-      }, 300000)
-    }
+    mapleContainer?.appendChild(mapleBox)
 
-    const interval = setInterval(newMapleGenerate, 300)
-
-    return () => clearInterval(interval)
+    setTimeout(() => {
+      mapleBox.remove()
+    }, duration * 1000)
   }, [])
+
+  useEffect(() => {
+    const interval = setInterval(createMaple, 900)
+    return () => clearInterval(interval)
+  }, [createMaple])
 
   return <div className="maple-container"></div>
 }
