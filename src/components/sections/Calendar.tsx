@@ -6,8 +6,8 @@ import { parseISO, format } from 'date-fns'
 import { ko } from 'date-fns/locale'
 
 import Timer from '@components/Timer'
-import Section from '@components/common/Section'
 
+import Section from '@components/common/Section'
 import MotionInner from '@components/common/MotionInner'
 
 import 'react-day-picker/dist/style.css'

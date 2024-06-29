@@ -1,7 +1,27 @@
+import NavigationLinkBtn, {
+  NavigationLink,
+} from '@components/NavigationLinkBtn'
+
 import Section from '@components/common/Section'
 import MotionInner from '@components/common/MotionInner'
 
 const Navigation = ({ link }: { link: string[] }) => {
+  const navigationLinks: NavigationLink[] = [
+    {
+      url: link[0],
+      imgSrc: './assets/kakaomap.png',
+      alt: 'kakaoMap',
+      name: '카카오 맵',
+    },
+    { url: link[1], imgSrc: './assets/tmap.png', alt: 'tmap', name: 'T Map' },
+    {
+      url: link[2],
+      imgSrc: './assets/navermap.png',
+      alt: 'naverMap',
+      name: '네이버 지도',
+    },
+  ]
+
   return (
     <Section className="navigation">
       <MotionInner className="navigation__inner">
@@ -12,20 +32,9 @@ const Navigation = ({ link }: { link: string[] }) => {
           </p>
         </div>
         <div className="navigation__container">
-          <a href={link[1]}>
-            <img src="./assets/kakaomap.png" alt="kakaoMap" />
-            <span>카카오 맵</span>
-          </a>
-
-          <a href={link[2]}>
-            <img src="./assets/tmap.png" alt="tmap" />
-            <span>T Map</span>
-          </a>
-
-          <a href={link[0]}>
-            <img src="./assets/navermap.png" alt="naverMap" />
-            <span>네이버 지도</span>
-          </a>
+          {navigationLinks.map((link, idx) => (
+            <NavigationLinkBtn key={idx} link={link} />
+          ))}
         </div>
       </MotionInner>
     </Section>

@@ -1,8 +1,10 @@
-import Section from '@components/common/Section'
-import Text from '@components/common/Text'
-import MotionInner from '@components/common/MotionInner'
-import { Location } from 'models/wedding'
 import { useEffect, useRef } from 'react'
+
+import Section from '@components/common/Section'
+import MotionInner from '@components/common/MotionInner'
+import Text from '@components/common/Text'
+
+import { Location } from 'models/wedding'
 
 declare global {
   interface Window {
@@ -37,7 +39,6 @@ const Locations = ({ location }: { location: Location }) => {
         })
 
         const map = new window.kakao.maps.Map(ref.current, option)
-        map.setDraggable(false)
         marker.setMap(map)
       })
     }

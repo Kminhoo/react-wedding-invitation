@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
+
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
 import { db } from '@firebaseApp'
 
@@ -38,7 +39,7 @@ const CommentForm = () => {
     }
   }
 
-  const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const onChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const {
       target: { name, value },
     } = e
@@ -46,9 +47,9 @@ const CommentForm = () => {
     if (name === 'comment') {
       setComment(value)
     }
-  }
+  }, [])
 
-  const onChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeName = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const {
       target: { name, value },
     } = e
@@ -56,17 +57,20 @@ const CommentForm = () => {
     if (name === 'name') {
       setName(value)
     }
-  }
+  }, [])
 
-  const onChangePassWord = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {
-      target: { name, value },
-    } = e
+  const onChangePassWord = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const {
+        target: { name, value },
+      } = e
 
-    if (name === 'password') {
-      setPassWord(value)
-    }
-  }
+      if (name === 'password') {
+        setPassWord(value)
+      }
+    },
+    [],
+  )
 
   return (
     <form className="comment__form" onSubmit={onSubmit}>

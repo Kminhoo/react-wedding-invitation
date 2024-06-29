@@ -1,6 +1,8 @@
 import Vehicle from '@components/Vehicle'
+
 import Section from '@components/common/Section'
 import MotionInner from '@components/common/MotionInner'
+
 import { Location } from 'models/wedding'
 
 const WayToCome = ({ location }: { location: Location }) => {

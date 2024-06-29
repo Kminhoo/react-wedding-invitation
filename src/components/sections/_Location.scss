@@ -1,10 +1,6 @@
 .location {
   &__inner {
-    margin-top: 150px;
-
-    @include mobile {
-      margin-top: 150px;
-    }
+    @extend .inner-margin;
   }
 
   &__title {
@@ -19,6 +15,10 @@
       letter-spacing: 2px;
       color: $weddingTitleColor;
 
+      @include tablet {
+        font-size: 30px;
+      }
+
       @include mobile {
         font-size: 28px;
       }
@@ -28,6 +28,10 @@
       color: $weddingSubTextColor;
       margin-top: 3px;
       font-size: 30px;
+
+      @include tablet {
+        font-size: 26px;
+      }
 
       @include mobile {
         font-size: 20px;
@@ -50,6 +54,10 @@
     color: $weddingMainTextColor;
     font-size: 35px;
 
+    @include tablet {
+      font-size: 30px;
+    }
+
     @include mobile {
       font-size: 22px;
     }
@@ -59,6 +67,10 @@
     color: $weddingSubTextColor;
     text-align: center;
     font-size: 24px;
+
+    @include tablet {
+      font-size: 22px;
+    }
 
     @include mobile {
       font-size: 16px;

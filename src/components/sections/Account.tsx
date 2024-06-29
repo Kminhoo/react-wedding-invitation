@@ -1,9 +1,11 @@
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+
 import Accordion from '@components/common/Accordion'
 import Section from '@components/common/Section'
 import Text from '@components/common/Text'
 import MotionInner from '@components/common/MotionInner'
+
 import { Person, Wedding } from 'models/wedding'
-import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 interface AccountProps {
   groom: Wedding['groom']

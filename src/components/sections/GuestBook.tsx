@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
+
 import { arrayRemove, doc, onSnapshot, updateDoc } from 'firebase/firestore'
 import { db } from '@firebaseApp'
+
 import CommentForm from '@components/CommentForm'
-import Section from '@components/common/Section'
-import { Comment } from 'models/wedding'
-import { useEffect } from 'react'
 import DeleteModal from '@components/DeleteModal'
+
+import Section from '@components/common/Section'
 import MotionInner from '@components/common/MotionInner'
+
+import { Comment } from 'models/wedding'
 import { BtnArrowIcon } from './ImageGallery'
 
 const GuestBook = () => {
@@ -34,7 +37,7 @@ const GuestBook = () => {
     return () => unsubscribe()
   }, [])
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const {
       target: { name, value },
     } = e
@@ -42,20 +45,20 @@ const GuestBook = () => {
     if (name === 'inputPassword') {
       setPassword(value)
     }
-  }
+  }, [])
 
-  const onDeleteClick = (index: number) => {
+  const onDeleteClick = useCallback((index: number) => {
     setSelectedCommentIndex(index)
     setModal(true)
-  }
+  }, [])
 
-  const onConfirmDelete = async () => {
+  const onConfirmDelete = useCallback(async () => {
     if (selectedCommentIndex === null) return
 
     const commentToDelete = comments[selectedCommentIndex]
 
     try {
-      if (commentToDelete.password === password) {
+      if (commentToDelete?.password === password) {
         const docRef = doc(db, 'wedding', 'v3eNky8xXowBjARen4i5')
         await updateDoc(docRef, {
           comments: arrayRemove(commentToDelete),
@@ -73,11 +76,11 @@ const GuestBook = () => {
     } catch (error) {
       console.error('댓글 삭제 중 오류가 발생했습니다:', error)
     }
-  }
+  }, [selectedCommentIndex, comments, password])
 
-  const handleLoadMore = () => {
+  const handleLoadMore = useCallback(() => {
     setVisibleComments((prevVisibleComments) => prevVisibleComments + 3)
-  }
+  }, [])
 
   if (error) {
     return <div>댓글을 불러올 수 없습니다.</div>
@@ -91,7 +94,7 @@ const GuestBook = () => {
           <p className="guest__book__title-sub">방명록</p>
         </div>
         <div className="guest__book-box">
-          {comments?.length === 0 ? (
+          {comments.length === 0 ? (
             <>
               <p className="guest__book-no-comment">
                 첫번 째 축하 댓글을 남겨보세요!

@@ -1,8 +1,6 @@
 .account {
   &__inner {
-    @extend .flex-center;
-    margin-top: 150px;
-    margin-bottom: 50px;
+    @extend .flex-center, .inner-margin;
     flex-direction: column;
   }
 
@@ -15,6 +13,10 @@
       font-weight: bold;
       letter-spacing: 2px;
 
+      @include tablet {
+        font-size: 30px;
+      }
+
       @include mobile {
         font-size: 28px;
       }
@@ -22,8 +24,16 @@
 
     &-sub {
       color: $weddingSubTextColor;
-      font-size: 20px;
+      font-size: 30px;
       margin-top: 5px;
+
+      @include tablet {
+        font-size: 26px;
+      }
+
+      @include mobile {
+        font-size: 20px;
+      }
     }
   }
 
@@ -36,6 +46,10 @@
     text-align: center;
     line-height: 1.5;
     font-size: 24px;
+
+    @include tablet {
+      font-size: 20px;
+    }
 
     @include mobile {
       font-size: 15px;
@@ -83,7 +97,8 @@
     li {
       cursor: pointer;
 
-      a, button {
+      a,
+      button {
         color: $weddingMainTextColor;
         background: transparent;
 
