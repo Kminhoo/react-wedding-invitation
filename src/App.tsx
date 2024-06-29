@@ -24,6 +24,7 @@ const App = () => {
     }, 4000)
 
     return () => clearTimeout(timer)
+    //eslint-disable-next-line
   }, [])
 
   if (loading) {

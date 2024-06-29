@@ -1,6 +1,7 @@
+import React, { SetStateAction, useCallback, useEffect, useState } from 'react'
+
 import { db } from '@firebaseApp'
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
-import React, { SetStateAction, useEffect, useState } from 'react'
 
 const RsvpForm = ({
   setResponse,
@@ -13,57 +14,69 @@ const RsvpForm = ({
   const [phoneNumber, setPhoneNumber] = useState<string>('')
   const [count, setCount] = useState<string>('')
 
-  const handleCheckPerson = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {
-      target: { value },
-    } = e
+  const handleCheckPerson = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const {
+        target: { value },
+      } = e
 
-    setPerson(value)
-    console.log('value : ', value)
-  }
+      setPerson(value)
+    },
+    [],
+  )
 
-  const handleCheckAttend = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {
-      target: { id, checked },
-    } = e
+  const handleCheckAttend = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const {
+        target: { id, checked },
+      } = e
 
-    if (id === 'attendTrue' && checked) {
-      setAttend(true)
-    }
+      if (id === 'attendTrue' && checked) {
+        setAttend(true)
+      }
 
-    if (id === 'attendFalse' && checked) {
-      setAttend(false)
-    }
+      if (id === 'attendFalse' && checked) {
+        setAttend(false)
+      }
+    },
+    [],
+  )
 
-    console.log(id, checked)
-  }
+  const handleCheckName = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const {
+        target: { name, value },
+      } = e
+      if (name === 'name') {
+        setName(value)
+      }
+    },
+    [],
+  )
 
-  const handleCheckName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {
-      target: { name, value },
-    } = e
-    if (name === 'name') {
-      setName(value)
-    }
-  }
+  const handleCheckPhone = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const {
+        target: { name, value },
+      } = e
+      if (name === 'contact') {
+        setPhoneNumber(value)
+      }
+    },
+    [],
+  )
 
-  const handleCheckPhone = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {
-      target: { name, value },
-    } = e
-    if (name === 'contact') {
-      setPhoneNumber(value)
-    }
-  }
-
-  const handleCheckCount = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {
-      target: { name, value },
-    } = e
-    if (name === 'count') {
-      setCount(value)
-    }
-  }
+  const handleCheckCount = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const {
+        target: { name, value },
+      } = e
+      if (name === 'count') {
+        setCount(value)
+      }
+    },
+    [],
+  )
 
   const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()

@@ -1,7 +1,5 @@
-import React from 'react'
 import Hero from '@sections/Hero'
 import Info from '@sections/Info'
-import { Wedding } from 'models/wedding'
 import Invitation from '@sections/Invitation'
 import Calendar from '@sections/Calendar'
 import ImageGallery from '@sections/ImageGallery'
@@ -9,8 +7,10 @@ import Locations from '@sections/Locations'
 import Navigation from '@sections/Navigation'
 import WayToCome from '@sections/WayToCome'
 import GuestBook from '@sections/GuestBook'
-import Account from './sections/Account'
-import Rsvp from './sections/Rsvp'
+import Account from '@sections/Account'
+import Rsvp from '@sections/Rsvp'
+
+import { Wedding } from 'models/wedding'
 
 const Main = ({ wedding }: { wedding: Wedding }) => {
   const {

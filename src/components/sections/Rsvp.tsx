@@ -1,7 +1,9 @@
+import { useState } from 'react'
+
 import RsvpForm from '@components/RsvpForm'
+
 import Section from '@components/common/Section'
 import MotionInner from '@components/common/MotionInner'
-import React, { useState } from 'react'
 
 const Rsvp = () => {
   const [response, setResponse] = useState<boolean>(false)
