@@ -5,6 +5,8 @@ import ImageViewer from '@components/ImageViewer'
 import Section from '@components/common/Section'
 import MotionInner from '@components/common/MotionInner'
 
+import generateImgUrl from '../../utils/generateImgUrl'
+
 const ImageGallery = ({ images }: { images: string[] }) => {
   const [selectedIndex, setSelectedIndex] = useState(-1)
 
@@ -36,7 +38,23 @@ const ImageGallery = ({ images }: { images: string[] }) => {
                   className="gallery__item"
                   onClick={() => handleSelectedImage(index)}
                 >
-                  <img alt="wedding" src={`./assets/images/${img}.jpeg`} />
+                  <picture>
+                    <source
+                      srcSet={generateImgUrl({
+                        fileName: img,
+                        type: 'webp',
+                        option: 'w_350,h_350,c_fill,g_auto',
+                      })}
+                    />
+                    <img
+                      alt="wedding"
+                      src={generateImgUrl({
+                        fileName: img,
+                        type: 'jpg',
+                        option: 'w_350,h_350,c_fill,g_auto',
+                      })}
+                    />
+                  </picture>
                 </li>
               ))}
             </ul>

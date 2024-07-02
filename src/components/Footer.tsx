@@ -41,7 +41,7 @@ const Footer = ({ message, date, groomName, brideName }: FooterProps) => {
         title: `${groomName + '♥️' + brideName} 결혼합니다.`,
         description: `${format(parseISO(date), 'M월 d일 eeee h시', { locale: ko })} 마리더스타`,
         imageUrl:
-          'https://res.cloudinary.com/dgl08y6j1/image/upload/v1719311724/webp/brc7qtmzeene1ayvzvfo.png',
+          'https://res.cloudinary.com/dgl08y6j1/image/upload/w_640,h_640,c_fill,q_auto/v1719919269/webp/weddingLink.webp',
         link: {
           mobileWebUrl: window.location.origin,
           webUrl: window.location.origin,

@@ -2,6 +2,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 import { Pagination, Navigation } from 'swiper/modules'
 
+import generateImgUrl from '../utils/generateImgUrl'
+
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -36,11 +38,23 @@ const ImageViewer = ({
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
-            <img
-              className="viewer__img"
-              src={`./assets/images/${img}.jpeg`}
-              alt="wedding"
-            />
+            <picture>
+              <source
+                srcSet={generateImgUrl({
+                  fileName: img,
+                  type: 'webp',
+                  option: 'w_800,h_1200,c_fill,g_auto',
+                })}
+              />
+              <img
+                alt="wedding"
+                src={generateImgUrl({
+                  fileName: img,
+                  type: 'jpg',
+                  option: 'w_700,c_fill,g_auto',
+                })}
+              />
+            </picture>
           </SwiperSlide>
         ))}
       </Swiper>
