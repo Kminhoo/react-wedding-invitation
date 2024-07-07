@@ -5,7 +5,7 @@ import ImageViewer from '@components/ImageViewer'
 import Section from '@components/common/Section'
 import MotionInner from '@components/common/MotionInner'
 
-import generateImgUrl from '../../utils/generateImgUrl'
+import generateImgUrl from '@utils/generateImgUrl'
 
 const ImageGallery = ({ images }: { images: string[] }) => {
   const [selectedIndex, setSelectedIndex] = useState(-1)

@@ -6,7 +6,8 @@
       "@sections/*": ["./components/sections/*"],
       "@firebaseApp": ["./firebaseApp"],
       "@mapleAssets": ["./mapleAssets/*"],
-      "@hooks/*": ["./hooks/*"]
+      "@hooks/*": ["./hooks/*"],
+      "@utils/*": ["./utils/*"]
     }
   }
 }

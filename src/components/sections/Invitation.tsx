@@ -4,6 +4,7 @@ import Text from '@components/common/Text'
 
 import InvitationPerson from '@components/InvitationPerson'
 
+import generateImgUrl from '@utils/generateImgUrl'
 import { Message } from 'models/wedding'
 
 interface InvitationProps {
@@ -40,7 +41,24 @@ const Invitation = ({
         </div>
         <Text className="invitation__intro">{message.intro}</Text>
         <div className="invitation__message-img">
-          <img src="./assets/file.jpg" alt="wedding message" />
+          <picture>
+            <source
+              srcSet={generateImgUrl({
+                fileName: 'weddingMiddle',
+                type: 'webp',
+                option: 'w_540,c_fill',
+              })}
+              type="image/webp"
+            />
+            <img
+              src={generateImgUrl({
+                fileName: 'weddingMiddle',
+                type: 'jpg',
+                option: 'w_540,c_fill',
+              })}
+              alt="wedding message"
+            />
+          </picture>
         </div>
         <Text className="invitation__message">{message.invitation}</Text>
         <div className="invitation__person-box">

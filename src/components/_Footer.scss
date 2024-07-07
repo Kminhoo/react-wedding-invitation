@@ -10,13 +10,9 @@
   &__message {
     position: absolute;
     top: 80px;
-    right: 100px;
+    left: 40px;
     line-height: 1.2;
-    color: $weddingMainTextColor;
-
-    @include tablet {
-      right: 20px;
-    }
+    color: $backgroundBody;
 
     @include mobile {
       font-size: 14px;
@@ -52,8 +48,12 @@
     position: relative;
     width: 100%;
     height: 500px;
-    background-image: url('./../../public/assets/images/wedding_01.jpeg');
-    background-position: center;
+    background-image: url("https://res.cloudinary.com/dgl08y6j1/image/upload/w_1000,c_fill,g_auto/v1719941208/webp/weddingEnd.webp"); 
+    background-image: image-set(
+      url("https://res.cloudinary.com/dgl08y6j1/image/upload/w_1000,c_fill,g_auto/v1719941208/webp/weddingEnd.webp") type("image/webp")
+      url("https://res.cloudinary.com/dgl08y6j1/image/upload/w_1000,c_fill,g_auto/v1719941208/jpg/weddingEnd.jpg") type("image/jpg")
+    );
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
 
