@@ -1,8 +1,13 @@
+import { useErrorBoundary } from 'react-error-boundary'
+
 interface StateMessageProps {
   type: 'loading' | 'error'
+  error?: string
 }
 
-const StateMessage = ({ type }: StateMessageProps) => {
+const StateMessage = ({ type, error }: StateMessageProps) => {
+  const { resetBoundary } = useErrorBoundary()
+
   return (
     <div className="message__container">
       {type === 'loading' ? (
@@ -16,9 +21,10 @@ const StateMessage = ({ type }: StateMessageProps) => {
           <span className="message__text-error">
             청첩장을 가져오지 못했어요
           </span>
-          <span className="message__text-error">
-            인터넷 연결을 확인해 주세요
-          </span>
+          <span className="message__text-error">{error}</span>
+          <button className="message__text-error-btn" onClick={resetBoundary}>
+            다시 시도하기
+          </button>
         </>
       )}
     </div>

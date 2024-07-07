@@ -11,7 +11,7 @@ import FullScreenMessage from '@components/common/FullScreenMessage'
 import useAppState from '@hooks/useAppState'
 
 const App = () => {
-  const { loading, error, wedding, getWeddingData } = useAppState()
+  const { loading, wedding, getWeddingData } = useAppState()
 
   const [visibleApp, setVisibleApp] = useState(false)
 
@@ -29,10 +29,6 @@ const App = () => {
 
   if (loading) {
     return <StateMessage type="loading" />
-  }
-
-  if (error) {
-    return <StateMessage type="error" />
   }
 
   if (wedding == null) {

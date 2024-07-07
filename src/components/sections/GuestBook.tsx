@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 
 import { arrayRemove, doc, onSnapshot, updateDoc } from 'firebase/firestore'
 import { db } from '@firebaseApp'
+import { useErrorBoundary } from 'react-error-boundary'
 
 import CommentForm from '@components/CommentForm'
 import DeleteModal from '@components/DeleteModal'
@@ -13,13 +14,13 @@ import { Comment } from 'models/wedding'
 import { BtnArrowIcon } from './ImageGallery'
 
 const GuestBook = () => {
+  const { showBoundary } = useErrorBoundary()
   const [modal, setModal] = useState<boolean>(false)
   const [password, setPassword] = useState<string>('')
   const [selectedCommentIndex, setSelectedCommentIndex] = useState<
     number | null
   >(null)
   const [comments, setComments] = useState<Comment[]>([])
-  const [error, setError] = useState()
   const [visibleComments, setVisibleComments] = useState<number>(3)
 
   useEffect(() => {
@@ -28,13 +29,19 @@ const GuestBook = () => {
     const unsubscribe = onSnapshot(docRef, (querySnapshot) => {
       try {
         const newComments: Comment[] = querySnapshot?.data()?.comments.reverse()
+
+        if (!querySnapshot.data()) {
+          throw new Error('방명록 데이터를 가져올 수 없습니다.')
+        }
+
         setComments(newComments)
       } catch (e: any) {
-        setError(e)
+        showBoundary(e)
       }
     })
 
     return () => unsubscribe()
+    // eslint-disable-next-line
   }, [])
 
   const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -81,10 +88,6 @@ const GuestBook = () => {
   const handleLoadMore = useCallback(() => {
     setVisibleComments((prevVisibleComments) => prevVisibleComments + 3)
   }, [])
-
-  if (error) {
-    return <div>댓글을 불러올 수 없습니다.</div>
-  }
 
   return (
     <Section className="guest__book">

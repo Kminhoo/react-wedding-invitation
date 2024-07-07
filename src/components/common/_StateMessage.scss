@@ -52,6 +52,21 @@
   .message__text-error {
     font-size: 20px;
     margin-top: 20px;
+
+    &-btn {
+      margin-top: 50px;
+      padding: 10px;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      font-size: 14px;
+      background: 544f4f;
+      background: #e8e8e8;
+
+      &:hover {
+        color: #e8e8e8;
+        background: black;
+      }
+    }
   }
 }
 
