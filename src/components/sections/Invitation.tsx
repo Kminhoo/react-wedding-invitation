@@ -44,7 +44,7 @@ const Invitation = ({
           <picture>
             <source
               srcSet={generateImgUrl({
-                fileName: 'weddingMiddle',
+                fileName: 'weddingMiddle1',
                 type: 'webp',
                 option: 'w_540,c_fill',
               })}

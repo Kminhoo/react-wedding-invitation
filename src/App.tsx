@@ -21,7 +21,7 @@ const App = () => {
 
     const timer = setTimeout(() => {
       setVisibleApp(false)
-    }, 4000)
+    }, 3000)
 
     return () => clearTimeout(timer)
     //eslint-disable-next-line

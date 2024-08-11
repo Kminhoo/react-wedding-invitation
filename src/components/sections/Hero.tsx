@@ -1,5 +1,6 @@
 import Section from '@components/common/Section'
 import MotionInner from '@components/common/MotionInner'
+
 import generateImgUrl from '@utils/generateImgUrl'
 
 const Hero = () => {
@@ -10,7 +11,7 @@ const Hero = () => {
           <picture>
             <source
               srcSet={generateImgUrl({
-                fileName: 'weddingHero',
+                fileName: 'weddingHero1',
                 type: 'webp',
                 option: 'w_640',
               })}
@@ -30,7 +31,7 @@ const Hero = () => {
               srcSet={generateImgUrl({
                 fileName: 'weddingText',
                 type: 'webp',
-                option: 'w_500',
+                option: 'w_300',
               })}
               type="image/webp"
             />

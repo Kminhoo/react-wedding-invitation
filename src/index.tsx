@@ -15,7 +15,7 @@ const ErrorFallback = ({ error }: { error: any }) => {
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <ErrorBoundary fallbackRender={ErrorFallback}>
-    <App />,
+    <App />
   </ErrorBoundary>,
 )
 
